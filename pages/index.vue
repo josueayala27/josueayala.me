@@ -1,5 +1,10 @@
 <template>
-  <Tutorial class="bg-red-500" />
+  <div class="h-screen flex items-center justify-center">
+    <img
+      class="w-[50%]"
+      src="@/assets/img/general/logo-joscode.svg"
+      alt="Josué ayala logo" />
+  </div>
 </template>
 
 <script lang="ts">
