@@ -19,7 +19,7 @@ export default {
 
   plugins: [],
 
-  components: true,
+  components: [{ path: '@/components/ui', files: ['.vue'] }],
 
   buildModules: [
     '@nuxt/typescript-build',

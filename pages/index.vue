@@ -1,17 +1,21 @@
 <template>
-  <div class="prose text-justify">
-    <nuxt-content :document="page" />
+  <div class="prose">
+    <ul>
+      <li v-for="(post, i) in posts" :key="i">
+        <router-link :to="`/blog${post.path}`">
+          {{ post.title }}
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({
+<script>
+export default {
   name: 'IndexPage',
   async asyncData({ $content }) {
-    const page = await $content('hello').fetch();
-    return { page };
+    const posts = await $content().only(['description', 'title']).fetch();
+    return { posts };
   },
-});
+};
 </script>

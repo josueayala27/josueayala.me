@@ -1,9 +1,10 @@
 <template>
   <div class="max-w-[42rem] mx-auto px-6">
     <header>
-      <nav>
+      <nav class="border-b">
         <div
-          class="py-4 border-b"
+          @click="$router.push('/')"
+          class="py-4 cursor-pointer inline-flex"
           v-html="require('@/assets/svg/general/logo-joscode.svg?raw')"></div>
       </nav>
     </header>
