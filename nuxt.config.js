@@ -19,7 +19,12 @@ export default {
 
   components: true,
 
-  buildModules: ['@nuxt/typescript-build', '@nuxt/postcss8'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxt/postcss8',
+    '@nuxtjs/svg',
+    '@nuxtjs/google-fonts',
+  ],
 
   modules: ['@nuxtjs/axios'],
 
@@ -29,6 +34,16 @@ export default {
         tailwindcss: {},
         autoprefixer: {},
       },
+    },
+  },
+
+  googleFonts: {
+    preconnect: true,
+    preload: true,
+    download: true,
+    overwriting: false,
+    families: {
+      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
 };
