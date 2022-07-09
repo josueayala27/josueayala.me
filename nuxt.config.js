@@ -1,3 +1,5 @@
+import { getHighlighter } from 'shiki';
+
 export default {
   head: {
     title: 'jos.code',
@@ -26,7 +28,7 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: ['@nuxtjs/axios'],
+  modules: ['@nuxtjs/axios', '@nuxt/content'],
 
   build: {
     postcss: {
@@ -41,9 +43,22 @@ export default {
     preconnect: true,
     preload: true,
     download: true,
-    overwriting: false,
+    overwriting: true,
     families: {
       Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      'JetBrains Mono': [100, 200, 300, 400, 500, 600, 700, 800, 900],
+    },
+  },
+
+  content: {
+    dir: 'content',
+    markdown: {
+      async highlighter() {
+        const highlighter = await getHighlighter({
+          theme: 'dracula',
+        });
+        return (code, lang) => highlighter.codeToHtml(code, lang);
+      },
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen flex items-center justify-center">
-    I'm the index page
+  <div class="prose text-justify">
+    <nuxt-content :document="page" />
   </div>
 </template>
 
@@ -9,5 +9,9 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'IndexPage',
+  async asyncData({ $content }) {
+    const page = await $content('hello').fetch();
+    return { page };
+  },
 });
 </script>
