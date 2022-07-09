@@ -9,7 +9,7 @@ As someone who has been using Vue 2 for a while now, switching over to Vue 3 wit
 
 One of the hiccups or issues I faced while writing Vue 3 applications was using custom events in the new Composition API instead of the good ol' Options API.
 
-I tried checking out the [Vue Docs](https://v3.vuejs.org/guide/component-custom-events.html#defining-custom-events), but I wasn't getting exactly what I wanted. Then I set out on a googling spree, desperate to find a way to use custom events with the [Composition API](https://vuejs.org/guide/extras/composition-api-faq.html#better-logic-reuse) in my project. 
+I tried checking out the [Vue Docs](https://v3.vuejs.org/guide/component-custom-events.html#defining-custom-events), but I wasn't getting exactly what I wanted. Then I set out on a googling spree, desperate to find a way to use custom events with the [Composition API](https://vuejs.org/guide/extras/composition-api-faq.html#better-logic-reuse) in my project.
 
 And I finally found the way(s) 😋.
 
@@ -21,4 +21,22 @@ Before I dive right into how to use Custom events with the Composition API in Vu
 
 ```html
 <button @click="$emit('btn-click')">Click me</button>
+```
+
+## Custom code block in [NuxtJS](https://nuxtjs.org)
+
+```js
+export default {
+  ...
+  content: {
+    markdown: {
+      async highlighter() {
+        const highlighter = await getHighlighter({
+          theme: 'dracula',
+        });
+        return (code, lang) => highlighter.codeToHtml(code, lang);
+      },
+    },
+  },
+}
 ```
