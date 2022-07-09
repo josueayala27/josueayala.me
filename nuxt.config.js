@@ -51,7 +51,6 @@ export default {
   },
 
   content: {
-    dir: 'content',
     markdown: {
       async highlighter() {
         const highlighter = await getHighlighter({

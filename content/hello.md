@@ -1,9 +1,9 @@
 ---
 title: Home
-description: This is my homepage.
+description: Custom events in Vue 3
 ---
 
-# How to use Custom events in Vue 3
+# Custom events in Vue 3
 
 As someone who has been using Vue 2 for a while now, switching over to Vue 3 with its new composition API and other cool features is exciting but comes with its little hiccups.
 

@@ -3,11 +3,11 @@
     <header>
       <nav>
         <div
-          class="py-4"
+          class="py-4 border-b"
           v-html="require('@/assets/svg/general/logo-joscode.svg?raw')"></div>
       </nav>
     </header>
-    <main>
+    <main class="py-4">
       <Nuxt />
     </main>
   </div>
