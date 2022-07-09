@@ -5,38 +5,61 @@ description: Custom events in Vue 3
 
 # Custom events in Vue 3
 
-As someone who has been using Vue 2 for a while now, switching over to Vue 3 with its new composition API and other cool features is exciting but comes with its little hiccups.
+Install Postmark
 
-One of the hiccups or issues I faced while writing Vue 3 applications was using custom events in the new Composition API instead of the good ol' Options API.
-
-I tried checking out the [Vue Docs](https://v3.vuejs.org/guide/component-custom-events.html#defining-custom-events), but I wasn't getting exactly what I wanted. Then I set out on a googling spree, desperate to find a way to use custom events with the [Composition API](https://vuejs.org/guide/extras/composition-api-faq.html#better-logic-reuse) in my project.
-
-And I finally found the way(s) 😋.
-
-So here, I'll discuss how to emit custom events from our components using the Composition API.
-
-## Define Custom events Inline
-
-Before I dive right into how to use Custom events with the Composition API in Vue 3, here's how we normally use custom events inline. To emit custom events inline, maybe in an input field or button, we can define events using the `v-on` or `@` drective:
-
-```html
-<button @click="$emit('btn-click')">Click me</button>
+```txt
+yarn add postmark
 ```
 
-## Custom code block in [NuxtJS](https://nuxtjs.org)
+Next add the following environment variables:
 
-```js
-export default {
-  ...
-  content: {
-    markdown: {
-      async highlighter() {
-        const highlighter = await getHighlighter({
-          theme: 'dracula',
-        });
-        return (code, lang) => highlighter.codeToHtml(code, lang);
+```txt
+POSTMARK_API_TOKEN=
+SMTP_HOST=smtp.postmarkapp.com
+SMTP_PORT=25
+SMTP_USER=
+SMTP_PASSWORD=
+SMTP_FROM=name <no-reply@name.com>
+```
+
+You can find the values for `POSTMARK_API_TOKEN`, `SMTP_USER` and `SMTP_PASSWORD` by visiting Servers → API Tokens from the Postmark dashboard.
+
+To send next-auth emails using Postmark, update the `NextAuth` callback as follows:
+
+```ts
+import NextAuth from 'next-auth';
+import Providers from 'next-auth/providers';
+import { Client } from 'postmark';
+
+const postmarkClient = new Client(process.env.POSTMARK_API_TOKEN);
+
+export default NextAuth({
+  providers: [
+    Providers.Email({
+      server: {
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASSWORD,
+        },
       },
-    },
-  },
-}
+      from: process.env.SMTP_FROM,
+      sendVerificationRequest: async ({ identifier, url, provider }) => {
+        const result = await postmarkClient.sendEmailWithTemplate({
+          TemplateId: 'TEMPLATE-ID',
+          To: identifier,
+          From: provider.from,
+          TemplateModel: {
+            //
+          },
+        });
+
+        if (result.ErrorCode) {
+          throw new Error(result.Message);
+        }
+      },
+    }),
+  ],
+});
 ```
