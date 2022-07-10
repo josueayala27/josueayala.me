@@ -58,12 +58,34 @@ And install the API dependencies:
 npm install
 ```
 
-<Alert>
-  <strong>Note:</strong> When running install, you may encounter issues with <code>sqlite3</code> version <code>4.0.1 </code>depending on the version of Node you are running. Refer to the <a href="https://github.com/TryGhost/node-sqlite3/blob/master/CHANGELOG.md" target="_blank">https://github.com/TryGhost/node-sqlite3/blob/master/CHANGELOG.md</a> to determine compatibility with your environment.
+</br>
+<Alert type="warning">
+  <strong>Note:</strong> When running install, you may encounter issues with <code>sqlite3</code> version <code>4.0.1 </code>depending on the version of Node you are running. Refer to the <a href="https://github.com/TryGhost/node-sqlite3/blob/master/CHANGELOG.md" target="_blank">link</a> to determine compatibility with your environment.
 </Alert>
 
 Next, rename `.env.example` to `.env`:
 
 ```pug
 mv .env.example .env
+```
+
+I have here my html component with vue
+
+```vue
+<template>
+  <div
+    :class="{
+      'bg-yellow-100  border-yellow-500': type === 'warning',
+    }"
+    class="p-5 rounded-r-lg relative border-l-[.2rem]">
+    <div
+      :class="{
+        'text-yellow-500 bg-white shadow-md': type === 'warning',
+      }"
+      class="absolute -top-5 -left-5 rounded-full p-2">
+      <Icon name="..." />
+    </div>
+    <slot />
+  </div>
+</template>
 ```
