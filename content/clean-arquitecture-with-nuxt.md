@@ -3,13 +3,7 @@ title: How to implement authentication in a nuxt.js app
 description: Custom events in Vue 3
 ---
 
-# How To Implement Authentication in a Nuxt.js App
-
-Published on December 11, 2019 · Updated on September 10, 2020
-
----
-
-In this tutorial, you’ll implement authentication in a [Nuxt.js](https://nuxtjs.org) app using the `Auth` module. For the purpose of this tutorial, you’ll be using `JWT` for authentication. Below is a quick demo of what you’ll be building in this tutorial:
+In this tutorial, you'll implement authentication in a [Nuxt.js](https://nuxtjs.org) app using the `Auth` module. For the purpose of this tutorial, you’ll be using `JWT` for authentication. Below is a quick demo of what you’ll be building in this tutorial:
 
 You can find the [source code for this application at GitHub.](https://github.com/do-community/nuxt-auth-app)
 
@@ -59,8 +53,9 @@ npm install
 ```
 
 </br>
-<Alert type="warning">
-  <strong>Note:</strong> When running install, you may encounter issues with <code>sqlite3</code> version <code>4.0.1 </code>depending on the version of Node you are running. Refer to the <a href="https://github.com/TryGhost/node-sqlite3/blob/master/CHANGELOG.md" target="_blank">link</a> to determine compatibility with your environment.
+
+<Alert type="warning" icon="{ type: 'outlined': name: 'warning' }">
+  <strong>Note:</strong> When running install, you may encounter issues with <code>sqlite3</code> version <code>4.0.1</code> depending on the version of Node you are running. Refer to the <a href="https://github.com/TryGhost/node-sqlite3/blob/master/CHANGELOG.md" target="_blank">link</a> to determine compatibility with your environment.
 </Alert>
 
 Next, rename `.env.example` to `.env`:
@@ -83,7 +78,7 @@ I have here my html component with vue
         'text-yellow-500 bg-white shadow-md': type === 'warning',
       }"
       class="absolute -top-5 -left-5 rounded-full p-2">
-      <Icon name="..." />
+      <Icon :name="icon.name" :type="icon.type" />
     </div>
     <slot />
   </div>
