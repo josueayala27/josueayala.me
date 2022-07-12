@@ -14,7 +14,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'SlugPage',
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params }: any) {
     const page = await $content(params.slug).fetch();
     return { page };
   },
