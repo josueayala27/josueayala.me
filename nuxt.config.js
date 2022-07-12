@@ -26,7 +26,6 @@ export default {
     '@nuxt/postcss8',
     '@nuxtjs/svg',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/composition-api/module',
   ],
 
   modules: ['@nuxtjs/axios', '@nuxt/content'],
