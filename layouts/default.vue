@@ -1,14 +1,6 @@
 <template>
   <div class="max-w-[42rem] mx-auto px-6">
-    <header>
-      <nav class="border-b">
-        <div
-          @click="$router.push('/')"
-          class="py-4 cursor-pointer inline-flex"
-          v-html="require('@/assets/svg/general/logo-joscode.svg?raw')"></div>
-      </nav>
-    </header>
-    <main class="py-4">
+    <main>
       <Nuxt />
     </main>
   </div>
