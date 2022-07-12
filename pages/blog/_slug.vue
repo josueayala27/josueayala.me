@@ -10,20 +10,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 
-export default defineComponent({
+export default Vue.extend({
   name: 'SlugPage',
   async asyncData({ $content, params }) {
     const page = await $content(params.slug).fetch();
-    return { page };
-  },
-  setup() {
-    const page = reactive({
-      hola: true,
-    });
-    console.log(page);
-
     return { page };
   },
 });
