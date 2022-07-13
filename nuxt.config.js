@@ -44,6 +44,7 @@ export default {
 
   googleFonts: {
     display: 'swap',
+    preload: true,
     download: true,
     overwriting: false,
     families: {
