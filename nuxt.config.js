@@ -2,7 +2,7 @@ import { getHighlighter } from 'shiki';
 
 export default {
   head: {
-    title: 'jos.code',
+    title: 'Josué Ayala | Personal blog',
     htmlAttrs: {
       lang: 'en',
     },
@@ -19,7 +19,10 @@ export default {
 
   plugins: [],
 
-  components: [{ path: '@/components/ui', files: ['.vue'] }],
+  components: {
+    global: true,
+    dirs: ['@/components/ui'],
+  },
 
   buildModules: [
     '@nuxt/typescript-build',

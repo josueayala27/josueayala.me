@@ -1,5 +1,5 @@
 <template>
-  <div class="prose max-w-none text-justify hover:prose-a:text-blue-600">
+  <div class="prose max-w-none hover:prose-a:text-blue-600">
     <div id="heading">
       <h1>{{ page.title }}</h1>
       <p>{{ page.description }}</p>

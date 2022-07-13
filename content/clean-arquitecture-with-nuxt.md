@@ -1,9 +1,9 @@
 ---
-title: How to implement authentication in a nuxt.js app
-description: Custom events in Vue 3
+title: Cómo implementar la autenticación en una aplicación nuxt.js 🍷
+description: Descripción mamalona
 ---
 
-In this tutorial, you'll implement authentication in a [Nuxt.js](https://nuxtjs.org) app using the `Auth` module. For the purpose of this tutorial, you’ll be using `JWT` for authentication. Below is a quick demo of what you’ll be building in this tutorial:
+In this tutorial, you'll implement authentication in a [Nuxt.js](https://nuxtjs.org) app using the `Auth` module. For the purpose of this tutorial, you’ll be using `JWT` for authentication. Below is a quick demo of what you'll be building in this tutorial:
 
 You can find the [source code for this application at GitHub.](https://github.com/do-community/nuxt-auth-app)
 
