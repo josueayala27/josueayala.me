@@ -43,8 +43,7 @@ export default {
   },
 
   googleFonts: {
-    preconnect: true,
-    preload: true,
+    display: 'swap',
     download: true,
     overwriting: false,
     families: {
