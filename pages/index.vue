@@ -1,9 +1,12 @@
 <template>
-  <div class="flex items-center justify-center h-screen">
-    <img
-      class="rounded-full overflow-hidden object-cover aspect-square w-[50%]"
-      src="@/assets/img/125269448_3566643150045828_3681845615705051439_n.jpeg"
-      alt="Josué Ayala Page" />
+  <div class="prose">
+    <ul>
+      <li v-for="(post, i) in posts" :key="i">
+        <router-link :to="`/blog${post.path}`">
+          {{ post.title }}
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
