@@ -3,7 +3,7 @@
     <header>
       <Navigation />
     </header>
-    <main class="py-4">
+    <main class="py-4 w-full">
       <Nuxt />
     </main>
   </div>
