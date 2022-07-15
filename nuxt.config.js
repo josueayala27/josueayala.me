@@ -17,7 +17,7 @@ export default {
 
   css: ['@/assets/css/main.css'],
 
-  plugins: [],
+  plugins: ['@/plugins/supabase.ts'],
 
   components: {
     global: true,

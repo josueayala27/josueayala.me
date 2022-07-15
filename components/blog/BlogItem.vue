@@ -10,9 +10,7 @@
       {{ data.description }}
     </p>
     <div class="flex items-center gap-1">
-      <router-link ref="blog-redirect" :to="`/blog${data.path}`">
-        Read more
-      </router-link>
+      <span class="font-semibold">Read more</span>
       <icon
         class="opacity-0 text-pastel-green-600 group-hover:translate-x-1 group-hover:opacity-100 transition-all duration-300"
         name="chevron-double-right" />
