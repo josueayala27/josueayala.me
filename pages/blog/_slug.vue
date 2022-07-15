@@ -1,10 +1,30 @@
 <template>
-  <div class="prose max-w-none hover:prose-a:text-blue-600">
-    <div id="heading">
+  <div
+    class="prose max-w-none hover:prose-a:text-pastel-green-600 prose-a:no-underline">
+    <Breadcrumb />
+
+    <!-- Header -->
+    <section>
       <h1>{{ page.title }}</h1>
       <p>{{ page.description }}</p>
       <div class="border-b"></div>
-    </div>
+    </section>
+
+    <!-- Table of contents -->
+    <section>
+      <h2>On this page</h2>
+      <ul>
+        <li
+          v-for="(link, i) in page.toc"
+          :key="i"
+          class="cursor-pointer font-medium">
+          <nuxt-link :to="`#${link.id}`">{{ link.text }}</nuxt-link>
+        </li>
+      </ul>
+      <div class="border-b"></div>
+    </section>
+
+    <!-- Blog content -->
     <nuxt-content :document="page" />
   </div>
 </template>
@@ -15,7 +35,7 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'SlugPage',
   async asyncData({ $content, params }: any) {
-    const page = await $content(params.slug).fetch();
+    const page = await $content(`es/${params.slug}`).fetch();
     return { page };
   },
 });

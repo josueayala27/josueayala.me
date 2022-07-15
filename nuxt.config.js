@@ -21,7 +21,7 @@ export default {
 
   components: {
     global: true,
-    dirs: ['@/components/ui', '@/components/blog'],
+    dirs: ['@/components/ui', '@/components/blog', '@/components/layout'],
   },
 
   buildModules: [

@@ -1,11 +1,9 @@
 <template>
   <div
-    @click="
-      $router.push({ name: 'blog-slug', params: { slug: sanitize(data.path) } })
-    "
+    @click="$router.push({ name: 'blog-slug', params: { slug: data.slug } })"
     v-bind="{ ...$attrs }"
     class="cursor-pointer group">
-    <h2 class="group-hover:text-[#66D88C] transition-all duration-300">
+    <h2 class="group-hover:text-pastel-green-600 transition-all duration-300">
       {{ data.title }}
     </h2>
     <p class="text-justify">
@@ -16,7 +14,7 @@
         Read more
       </router-link>
       <icon
-        class="opacity-0 text-[#66D88C] group-hover:translate-x-1 group-hover:opacity-100 transition-all duration-300"
+        class="opacity-0 text-pastel-green-600 group-hover:translate-x-1 group-hover:opacity-100 transition-all duration-300"
         name="chevron-double-right" />
     </div>
   </div>

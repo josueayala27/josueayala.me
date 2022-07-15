@@ -12,8 +12,8 @@
 export default {
   name: 'IndexPage',
   async asyncData({ $content }) {
-    const posts = await $content()
-      .only(['description', 'title', 'path'])
+    const posts = await $content('es')
+      .only(['description', 'title', 'slug'])
       .fetch();
     return { posts };
   },

@@ -1,6 +1,6 @@
 ---
 title: My Wonderful HTML Email Workflow
-description: If you've ever had the misfortune of being tasked with building a template for HTML emails, you know it's tricky business! In this blog post, I share the approach I took to build responsive, client-friendly emails without a single <table> tag.
+description: Deploy your Next.js + Prisma app to PlanetScale and Vercel
 ---
 
 In this tutorial, you'll implement authentication in a [Nuxt.js](https://nuxtjs.org) app using the `Auth` module. For the purpose of this tutorial, you’ll be using `JWT` for authentication. Below is a quick demo of what you'll be building in this tutorial:
@@ -16,9 +16,19 @@ To complete this tutorial, you will need: hello@josueayala.me
 
 Some familiarity with Vue.js and Nuxt.js may be beneficial. You can [refer to this post](https://www.digitalocean.com/community/tutorials/vuejs-server-side-rendering-with-nuxtjs) if you’re getting started with Nuxt.js.
 
+> This is my blog LOL
+
+| Prop        | Type   | Default | Description                                                                                   |
+| ----------- | ------ | ------- | --------------------------------------------------------------------------------------------- |
+| avatars     | Array  | null    | You must have an array with the routes of all your photographs, so that they can be displayed |
+| max         | Number | 5       | Maximum number of avatarts displayed                                                          |
+| borderColor | String | #FFFFFF | You can change the color of the borders using **hexadecimal** codes for the colors            |
+
 This tutorial was verified with Node v13.13.0, npm v6.14.4, `vue` v2.6.11, and `nuxt` v2.12.2.
 
 ## Step 1 — Spinning up a Sample API
+
+### Sub heading
 
 You are free to use whatever framework that works best for you. However, for quick development, this tutorial will clone an API built with [AdonisJs.](https://adonisjs.com)
 
