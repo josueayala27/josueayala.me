@@ -9,9 +9,7 @@
 </template>
 
 <script>
-import { defineComponent } from '@nuxtjs/composition-api';
-
-export default defineComponent({
+export default {
   name: 'IndexPage',
   async asyncData({ $content }) {
     const posts = await $content()
@@ -19,5 +17,5 @@ export default defineComponent({
       .fetch();
     return { posts };
   },
-});
+};
 </script>

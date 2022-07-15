@@ -7,20 +7,17 @@
 </template>
 
 <script>
-import { defineComponent, computed } from '@nuxtjs/composition-api';
-
-export default defineComponent({
+export default {
   name: 'IconComponent',
   props: {
     category: { type: String, default: 'outline' },
     name: { type: String, default: '' },
     size: { type: String, default: '1.2rem' },
   },
-  setup(props) {
-    const icon = computed(() =>
-      require(`@/assets/icons/${props.category}/${props.name}.svg?raw`)
-    );
-    return { icon };
+  computed: {
+    icon() {
+      return require(`@/assets/icons/${this.category}/${this.name}.svg?raw`);
+    },
   },
-});
+};
 </script>
