@@ -1,6 +1,6 @@
 ---
-title: Statements vs Expressions
-description: One of the most foundational things to understand about JavaScript is that programs are made up of statements, and statements have slots for expressions. In this blog post, we'll dig into how these two structures work, and see how building an intuition about this can help us solve practical problems.
+title: My Wonderful HTML Email Workflow
+description: If you've ever had the misfortune of being tasked with building a template for HTML emails, you know it's tricky business! In this blog post, I share the approach I took to build responsive, client-friendly emails without a single <table> tag.
 ---
 
 In this tutorial, you'll implement authentication in a [Nuxt.js](https://nuxtjs.org) app using the `Auth` module. For the purpose of this tutorial, you’ll be using `JWT` for authentication. Below is a quick demo of what you'll be building in this tutorial:
@@ -9,7 +9,7 @@ You can find the [source code for this application at GitHub.](https://github.co
 
 ## Prerequisites
 
-To complete this tutorial, you will need:
+To complete this tutorial, you will need: hello@josueayala.me
 
 - Node.js installed locally, which you can do by following [How to Install Node.js and Create a Local Development Environment.](https://www.digitalocean.com/community/tutorial_series/how-to-install-node-js-and-create-a-local-development-environment)
 - A valid Git installation is optionally required for cloning the API, consult [Getting Started with Git.](https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git)
