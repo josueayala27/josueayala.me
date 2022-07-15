@@ -1,6 +1,6 @@
 <template>
   <div
-    class="prose max-w-none hover:prose-a:text-pastel-green-600 prose-a:no-underline">
+    class="prose max-w-none hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert">
     <Breadcrumb />
 
     <!-- Header -->
@@ -26,6 +26,8 @@
 
     <!-- Blog content -->
     <nuxt-content :document="page" />
+
+    <!-- Comments section -->
   </div>
 </template>
 

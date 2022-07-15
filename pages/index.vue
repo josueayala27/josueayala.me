@@ -1,5 +1,5 @@
 <template>
-  <div class="prose prose-a:no-underline prose-slate">
+  <div class="prose prose-a:no-underline prose-slate dark:prose-invert">
     <BlogItem
       :id="`blog-post-${index + 1}`"
       v-for="(post, index) in posts"

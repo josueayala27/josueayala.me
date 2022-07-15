@@ -31,7 +31,7 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxt/content'],
+  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/i18n'],
 
   build: {
     postcss: {
@@ -62,5 +62,10 @@ export default {
         return (code, lang) => highlighter.codeToHtml(code, lang);
       },
     },
+  },
+
+  publicRuntimeConfig: {
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    SUPABASE_PUBLIC: process.env.SUPABASE_PUBLIC,
   },
 };
