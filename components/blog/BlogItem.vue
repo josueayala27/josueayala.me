@@ -1,6 +1,8 @@
 <template>
   <div
-    @click="handleRedirect(sanitize(data.path))"
+    @click="
+      $router.push({ name: 'blog-slug', params: { slug: sanitize(data.path) } })
+    "
     v-bind="{ ...$attrs }"
     class="cursor-pointer group">
     <h2 class="group-hover:text-[#66D88C] transition-all duration-300">
@@ -32,11 +34,6 @@ export default {
     return {
       sanitize,
     };
-  },
-  methods: {
-    handleRedirect(slug: string) {
-      this.$router.push({ name: 'blog-slug', params: { slug } });
-    },
   },
 };
 </script>
