@@ -1,26 +1,17 @@
 <template>
   <div class="prose prose-a:no-underline prose-slate">
-    <div
+    <BlogItem
       :id="`blog-post-${index + 1}`"
       v-for="(post, index) in posts"
       :key="index"
-      class="cursor-pointer group">
-      <h2 class="group-hover:text-[#66D88C]">
-        {{ post.title }}
-      </h2>
-      <p>
-        {{ post.description }}
-      </p>
-      <div class="flex gap-3 items-center">
-        <router-link :to="`/blog${post.path}`"> Read more </router-link>
-        <icon name="chevron-double-right" />
-      </div>
-    </div>
+      :data="post" />
   </div>
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@nuxtjs/composition-api';
+
+export default defineComponent({
   name: 'IndexPage',
   async asyncData({ $content }) {
     const posts = await $content()
@@ -28,5 +19,5 @@ export default {
       .fetch();
     return { posts };
   },
-};
+});
 </script>

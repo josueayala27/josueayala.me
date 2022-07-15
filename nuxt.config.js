@@ -21,7 +21,7 @@ export default {
 
   components: {
     global: true,
-    dirs: ['@/components/ui'],
+    dirs: ['@/components/ui', '@/components/blog'],
   },
 
   buildModules: [
@@ -29,6 +29,7 @@ export default {
     '@nuxt/postcss8',
     '@nuxtjs/svg',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/composition-api/module',
   ],
 
   modules: ['@nuxtjs/axios', '@nuxt/content'],
