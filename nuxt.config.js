@@ -31,7 +31,7 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/axios', '@nuxt/content'],
 
   build: {
     postcss: {
