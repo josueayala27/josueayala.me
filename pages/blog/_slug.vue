@@ -36,6 +36,15 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'SlugPage',
+  mounted() {
+    this.get();
+  },
+  methods: {
+    async get() {
+      const { data } = await this.$supabase.from('comments').select('*');
+      console.log(data);
+    },
+  },
   async asyncData({ $content, params }: any) {
     const page = await $content(`es/${params.slug}`).fetch();
     return { page };

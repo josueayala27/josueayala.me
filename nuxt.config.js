@@ -65,7 +65,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    SUPABASE_URL: process.env.SUPABASE_URL,
-    SUPABASE_PUBLIC: process.env.SUPABASE_PUBLIC,
+    NUXT_PUBLIC_SUPABASE_URL: process.env.NUXT_PUBLIC_SUPABASE_URL,
+    NUXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
   },
 };
