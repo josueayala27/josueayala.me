@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "vercel-build": "yarn global add node-gyp"
+    "vercel-build": "yarn global add node-gyp-build"
   },
   "dependencies": {
     "@nuxt/content": "^1",
