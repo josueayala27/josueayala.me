@@ -31,23 +31,26 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({
+<script>
+export default {
   name: 'SlugPage',
+  data() {
+    return {
+      comments: [],
+    };
+  },
   mounted() {
     this.get();
   },
   methods: {
     async get() {
       const { data } = await this.$supabase.from('comments').select('*');
-      console.log(data);
+      this.comments = data;
     },
   },
-  async asyncData({ $content, params }: any) {
+  async asyncData({ $content, params }) {
     const page = await $content(`es/${params.slug}`).fetch();
     return { page };
   },
-});
+};
 </script>
