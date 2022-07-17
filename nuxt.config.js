@@ -17,7 +17,7 @@ export default {
 
   css: ['@/assets/css/main.css'],
 
-  plugins: [],
+  plugins: ['@/plugins/supabase.ts'],
 
   components: {
     global: true,
@@ -62,5 +62,10 @@ export default {
         return (code, lang) => highlighter.codeToHtml(code, lang);
       },
     },
+  },
+
+  publicRuntimeConfig: {
+    NUXT_PUBLIC_SUPABASE_URL: process.env.NUXT_PUBLIC_SUPABASE_URL,
+    NUXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
   },
 };
