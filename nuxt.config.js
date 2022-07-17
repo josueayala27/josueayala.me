@@ -31,17 +31,7 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxt/content',
-    [
-      'nuxt-supabase',
-      {
-        supabaseUrl: process.env.SUPABASE_URL,
-        supabaseKey: process.env.SUPABASE_KEY,
-      },
-    ],
-  ],
+  modules: ['@nuxtjs/axios', '@nuxt/content'],
 
   build: {
     postcss: {
