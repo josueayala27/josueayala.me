@@ -7,5 +7,3 @@ export default ({ $config }: any, inject: any) => {
   );
   inject('supabase', supabase);
 };
-
-// https://github.com/nuxt-community/supabase-module/tree/main/demo

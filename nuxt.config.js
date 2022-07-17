@@ -17,7 +17,7 @@ export default {
 
   css: ['@/assets/css/main.css'],
 
-  plugins: ['@/plugins/supabase.ts'],
+  plugins: [],
 
   components: {
     global: true,
@@ -31,7 +31,17 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxt/content'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxt/content',
+    [
+      'nuxt-supabase',
+      {
+        supabaseUrl: process.env.SUPABASE_URL,
+        supabaseKey: process.env.SUPABASE_KEY,
+      },
+    ],
+  ],
 
   build: {
     postcss: {
@@ -62,10 +72,5 @@ export default {
         return (code, lang) => highlighter.codeToHtml(code, lang);
       },
     },
-  },
-
-  publicRuntimeConfig: {
-    NUXT_PUBLIC_SUPABASE_URL: process.env.NUXT_PUBLIC_SUPABASE_URL,
-    NUXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
   },
 };
