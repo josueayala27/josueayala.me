@@ -6,12 +6,13 @@
     <section class="prose">
       <h1>{{ page.title }}</h1>
       <p>{{ page.description }}</p>
-      <div class="border-b"></div>
     </section>
 
-    <!-- Table of contents -->
+    <Separator />
+
+    <!-- Table of content -->
     <section
-      class="prose pt-[20px] hover:prose-a:text-pastel-green-600 prose-a:no-underline">
+      class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline">
       <h2>On this page</h2>
       <ul>
         <li
@@ -21,26 +22,40 @@
           <nuxt-link :to="`#${link.id}`">{{ link.text }}</nuxt-link>
         </li>
       </ul>
-      <div class="border-b"></div>
     </section>
 
-    <!-- Blog content -->
+    <Separator />
+
+    <!-- Content  -->
     <nuxt-content
-      class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert pt-[20px]"
+      class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert"
       :document="page" />
 
-    <!-- Comments section -->
-    <div class="p-5 rounded-lg border flex gap-2">
-      <Icon size="1.8rem" class="cursor-pointer" name="heart" />
-      <Icon
-        @click="comments.show = !comments.show"
-        size="1.8rem"
-        class="cursor-pointer"
-        name="annotation" />
-    </div>
-    <transition name="slide">
-      <Comments v-if="comments.show" />
-    </transition>
+    <Separator />
+
+    <!-- Comments  -->
+    <section class="flex flex-col gap-5">
+      <article class="flex flex-col gap-y-3" v-for="(comment, i) in 3" :key="i">
+        <div class="flex gap-x-3 items-center">
+          <img
+            class="h-[3rem] w-[3rem] object-cover"
+            src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/17be4dd08c5417027a544816a909fcf8/979c9db7-f35c-4beb-9df9-6c8b3c04d1b3_rw_600.gif?h=58f48393c5b7fbd65d39f6ab7e9b095b"
+            alt="Josué ayala image" />
+          <div class="flex flex-col text-sm">
+            <span class="font-semibold">Josué Ayala</span>
+            <span>3 years ago</span>
+          </div>
+        </div>
+        <span class="text-sm">
+          Awesome nice blog, how is the build in compilation time?
+        </span>
+        <div class="flex gap-2">
+          <Icon size="1.8rem" class="cursor-pointer" name="heart" />
+          <Icon size="1.8rem" class="cursor-pointer" name="annotation" />
+        </div>
+        <div class="border-b"></div>
+      </article>
+    </section>
   </div>
 </template>
 
