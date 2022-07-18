@@ -8,7 +8,7 @@
       :class="{
         'text-yellow-500 bg-white shadow-md': type === 'warning',
       }"
-      class="absolute -top-5 -left-5 w-auto z-10 rounded-full p-2 aspect-square">
+      class="absolute -top-5 -left-5 w-auto rounded-full p-2 aspect-square">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"

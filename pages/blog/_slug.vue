@@ -1,17 +1,17 @@
 <template>
-  <div
-    class="prose max-w-none hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert">
+  <div class="max-w-none">
     <Breadcrumb />
 
     <!-- Header -->
-    <section>
+    <section class="prose">
       <h1>{{ page.title }}</h1>
       <p>{{ page.description }}</p>
       <div class="border-b"></div>
     </section>
 
     <!-- Table of contents -->
-    <section>
+    <section
+      class="prose pt-[20px] hover:prose-a:text-pastel-green-600 prose-a:no-underline">
       <h2>On this page</h2>
       <ul>
         <li
@@ -25,9 +25,22 @@
     </section>
 
     <!-- Blog content -->
-    <nuxt-content :document="page" />
+    <nuxt-content
+      class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert pt-[20px]"
+      :document="page" />
 
     <!-- Comments section -->
+    <div class="p-5 rounded-lg border flex gap-2">
+      <Icon size="1.8rem" class="cursor-pointer" name="heart" />
+      <Icon
+        @click="comments.show = !comments.show"
+        size="1.8rem"
+        class="cursor-pointer"
+        name="annotation" />
+    </div>
+    <transition name="slide">
+      <Comments v-if="comments.show" />
+    </transition>
   </div>
 </template>
 
@@ -36,7 +49,10 @@ export default {
   name: 'SlugPage',
   data() {
     return {
-      comments: [],
+      comments: {
+        show: false,
+        data: [],
+      },
     };
   },
   mounted() {
@@ -45,7 +61,7 @@ export default {
   methods: {
     async get() {
       const { data } = await this.$supabase.from('comments').select('*');
-      this.comments = data;
+      this.comments.data = data;
     },
   },
   async asyncData({ $content, params }) {
@@ -54,3 +70,14 @@ export default {
   },
 };
 </script>
+
+<style>
+.slide-enter-active,
+.slide-leave-active {
+  @apply transition-all duration-500;
+}
+.slide-enter,
+.slide-leave-to {
+  @apply -translate-x-full;
+}
+</style>

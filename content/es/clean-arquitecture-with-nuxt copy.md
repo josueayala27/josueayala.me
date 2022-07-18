@@ -1,6 +1,8 @@
 ---
+uuid: 335362f4-0588-11ed-b939-0242ac120002
 title: My Wonderful HTML Email Workflow
 description: Deploy your Next.js + Prisma app to PlanetScale and Vercel
+allow_coments: false
 ---
 
 In this tutorial, you'll implement authentication in a [Nuxt.js](https://nuxtjs.org) app using the `Auth` module. For the purpose of this tutorial, you’ll be using `JWT` for authentication. Below is a quick demo of what you'll be building in this tutorial:
