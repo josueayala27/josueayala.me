@@ -35,25 +35,36 @@
 
     <!-- Comments  -->
     <section class="flex flex-col gap-5">
-      <article class="flex flex-col gap-y-3" v-for="(comment, i) in 3" :key="i">
+      <div class="prose">
+        <h2>Coments</h2>
+      </div>
+
+      <article
+        class="flex flex-col gap-2"
+        v-for="(comment, i) in comments.data"
+        :key="i">
         <div class="flex gap-x-3 items-center">
           <img
-            class="h-[3rem] w-[3rem] object-cover"
-            src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/17be4dd08c5417027a544816a909fcf8/979c9db7-f35c-4beb-9df9-6c8b3c04d1b3_rw_600.gif?h=58f48393c5b7fbd65d39f6ab7e9b095b"
-            alt="Josué ayala image" />
+            class="h-[3rem] w-[3rem] object-cover rounded-full overflow-hidden"
+            :src="comment.user.raw_user_meta_data.picture"
+            :alt="`${comment.user.raw_user_meta_data.full_name} image`" />
           <div class="flex flex-col text-sm">
-            <span class="font-semibold">Josué Ayala</span>
+            <span class="font-semibold">
+              {{ comment.user.raw_user_meta_data.full_name }}
+            </span>
             <span>3 years ago</span>
           </div>
         </div>
-        <span class="text-sm">
-          Awesome nice blog, how is the build in compilation time?
-        </span>
+        <span v-html="comment.content" class="text-sm"> </span>
         <div class="flex gap-2">
           <Icon size="1.8rem" class="cursor-pointer" name="heart" />
           <Icon size="1.8rem" class="cursor-pointer" name="annotation" />
         </div>
-        <div class="border-b"></div>
+
+        <Separator
+          classes="py-[5px]"
+          v-if="comments.data.length !== i + 1"
+          width="80%" />
       </article>
     </section>
   </div>
@@ -75,7 +86,10 @@ export default {
   },
   methods: {
     async get() {
-      const { data } = await this.$supabase.from('comments').select('*');
+      const { data } = await this.$supabase
+        .from('comments')
+        .select('*, user:user_id (*)')
+        .eq('post_id', this.page.uuid);
       this.comments.data = data;
     },
   },
