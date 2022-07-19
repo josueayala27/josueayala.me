@@ -5,11 +5,11 @@
       class="cursor-pointer inline-flex"
       v-html="require('@/assets/svg/general/logo-joscode.svg?raw')"></div>
     <div>
-      <Icon
+      <!-- <Icon
         @click="changeTheme"
         class="cursor-pointer"
         size="1.8rem"
-        name="sun" />
+        name="sun" /> -->
     </div>
   </nav>
 </template>
