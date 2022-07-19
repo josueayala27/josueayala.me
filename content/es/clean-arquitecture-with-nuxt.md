@@ -1,6 +1,8 @@
 ---
-title: Statements vs Expressions
-description: One of the most foundational things to understand about JavaScript is that programs are made up of statements, and statements have slots for expressions. In this blog post, we'll dig into how these two structures work, and see how building an intuition about this can help us solve practical problems.
+uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
+title: Clean arquitecture with nuxt
+description: Deploy your Next.js + Prisma app to PlanetScale and Vercel
+allow_coments: false
 ---
 
 In this tutorial, you'll implement authentication in a [Nuxt.js](https://nuxtjs.org) app using the `Auth` module. For the purpose of this tutorial, you’ll be using `JWT` for authentication. Below is a quick demo of what you'll be building in this tutorial:
@@ -9,16 +11,26 @@ You can find the [source code for this application at GitHub.](https://github.co
 
 ## Prerequisites
 
-To complete this tutorial, you will need:
+To complete this tutorial, you will need: hello@josueayala.me
 
 - Node.js installed locally, which you can do by following [How to Install Node.js and Create a Local Development Environment.](https://www.digitalocean.com/community/tutorial_series/how-to-install-node-js-and-create-a-local-development-environment)
 - A valid Git installation is optionally required for cloning the API, consult [Getting Started with Git.](https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git)
 
 Some familiarity with Vue.js and Nuxt.js may be beneficial. You can [refer to this post](https://www.digitalocean.com/community/tutorials/vuejs-server-side-rendering-with-nuxtjs) if you’re getting started with Nuxt.js.
 
+> This is my blog LOL
+
+| Prop        | Type   | Default | Description                                                                                   |
+| ----------- | ------ | ------- | --------------------------------------------------------------------------------------------- |
+| avatars     | Array  | null    | You must have an array with the routes of all your photographs, so that they can be displayed |
+| max         | Number | 5       | Maximum number of avatarts displayed                                                          |
+| borderColor | String | #FFFFFF | You can change the color of the borders using **hexadecimal** codes for the colors            |
+
 This tutorial was verified with Node v13.13.0, npm v6.14.4, `vue` v2.6.11, and `nuxt` v2.12.2.
 
 ## Step 1 — Spinning up a Sample API
+
+### Sub heading
 
 You are free to use whatever framework that works best for you. However, for quick development, this tutorial will clone an API built with [AdonisJs.](https://adonisjs.com)
 
