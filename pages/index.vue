@@ -13,6 +13,8 @@ export default {
   name: 'IndexPage',
   async asyncData({ $content }) {
     const posts = await $content('es')
+      .limit(5)
+      .where({ isPublished: true })
       .only(['description', 'title', 'slug'])
       .fetch();
     return { posts };

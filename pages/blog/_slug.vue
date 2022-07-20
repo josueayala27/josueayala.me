@@ -36,9 +36,11 @@
     <!-- Comments  -->
     <section class="flex flex-col gap-5">
       <div class="prose">
-        <h2>Coments</h2>
+        <h2>Coments ({{ comments.data.length }})</h2>
       </div>
 
+      <input type="text" placeholder="Enter comment" v-model="comments.model" />
+      <button @click="sendComment()">Send comment</button>
       <article
         class="flex flex-col gap-2"
         v-for="(comment, i) in comments.data"
@@ -52,14 +54,17 @@
             <span class="font-semibold">
               {{ comment.user.raw_user_meta_data.full_name }}
             </span>
-            <span>3 years ago</span>
+            <span>
+              {{ dayjs(comment.created_at).fromNow() }}
+            </span>
           </div>
         </div>
         <span v-html="comment.content" class="text-sm"> </span>
-        <div class="flex gap-2">
+
+        <!-- <div class="flex gap-2">
           <Icon size="1.8rem" class="cursor-pointer" name="heart" />
           <Icon size="1.8rem" class="cursor-pointer" name="annotation" />
-        </div>
+        </div> -->
 
         <Separator
           classes="py-[5px]"
@@ -71,26 +76,48 @@
 </template>
 
 <script>
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(relativeTime);
+
 export default {
   name: 'SlugPage',
   data() {
     return {
+      dayjs,
       comments: {
+        model: '',
         show: false,
         data: [],
       },
     };
   },
   mounted() {
-    this.get();
+    this.getComments();
   },
   methods: {
-    async get() {
+    async getComments() {
       const { data } = await this.$supabase
         .from('comments')
-        .select('*, user:user_id (*)')
-        .eq('post_id', this.page.uuid);
+        .select('content, created_at, id, is_pinned, user:user_id (*)', {
+          count: 'exact',
+        })
+        .eq('post_id', this.page.uuid)
+        .order('created_at', { ascending: false });
       this.comments.data = data;
+    },
+
+    async sendComment() {
+      await this.$supabase.from('comments').insert([
+        {
+          content: this.comments.model,
+          post_id: this.page.uuid,
+          user_id: this.$supabase.auth.user().id,
+        },
+      ]);
+
+      this.getComments();
     },
   },
   async asyncData({ $content, params }) {
