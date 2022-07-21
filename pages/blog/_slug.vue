@@ -109,6 +109,9 @@ export default {
     },
 
     async sendComment() {
+      if (!this.comments.model) return;
+
+      this.loaders.comments.add = true;
       await this.$supabase.from('comments').insert([
         {
           content: this.comments.model,
