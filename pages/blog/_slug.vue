@@ -35,57 +35,67 @@
 
     <!-- Comments  -->
     <section class="flex flex-col gap-5">
-      <div class="prose">
-        <h2>Coments ({{ comments.data.length }})</h2>
+      <div class="flex justify-between items-center">
+        <div class="prose">
+          <h2>Coments ({{ comments.data.length }})</h2>
+        </div>
+
+        <Button
+          v-if="!user"
+          @click="login('google')"
+          color="primary"
+          icon-align="left">
+          <template #icon>
+            <Icon name="plus" />
+          </template>
+          Write a comment
+        </Button>
       </div>
 
-      <input type="text" placeholder="Enter comment" v-model="comments.model" />
-      <button @click="sendComment()">Send comment</button>
-      <article
-        class="flex flex-col gap-2"
-        v-for="(comment, i) in comments.data"
-        :key="i">
-        <div class="flex gap-x-3 items-center">
-          <img
-            class="h-[3rem] w-[3rem] object-cover rounded-full overflow-hidden"
-            :src="comment.user.raw_user_meta_data.picture"
-            :alt="`${comment.user.raw_user_meta_data.full_name} image`" />
-          <div class="flex flex-col text-sm">
-            <span class="font-semibold">
-              {{ comment.user.raw_user_meta_data.full_name }}
-            </span>
-            <span>
-              {{ dayjs(comment.created_at).fromNow() }}
-            </span>
-          </div>
+      <div class="flex flex-col gap-2" v-if="user">
+        <Input
+          type="text"
+          placeholder="Write a comment"
+          v-model="comments.model" />
+        <div class="flex justify-end">
+          <Button
+            color="primary"
+            :is-loading="loaders.comments.add"
+            icon-align="left"
+            @click="sendComment()">
+            <template #icon>
+              <Icon name="plus" />
+            </template>
+            Send
+          </Button>
         </div>
-        <span v-html="comment.content" class="text-sm"> </span>
+      </div>
 
-        <!-- <div class="flex gap-2">
-          <Icon size="1.8rem" class="cursor-pointer" name="heart" />
-          <Icon size="1.8rem" class="cursor-pointer" name="annotation" />
-        </div> -->
-
-        <Separator
-          classes="py-[5px]"
-          v-if="comments.data.length !== i + 1"
-          width="80%" />
-      </article>
+      <Comment
+        @delete="(evt) => deleteComment(evt)"
+        :data="comment"
+        v-for="(comment, i) in comments.data"
+        :key="i" />
     </section>
   </div>
 </template>
 
 <script>
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-
-dayjs.extend(relativeTime);
-
 export default {
   name: 'SlugPage',
+
   data() {
     return {
-      dayjs,
+      user: false,
+      loaders: {
+        comments: {
+          get: false,
+          delete: false,
+          add: false,
+        },
+        blog: {},
+      },
+
       comments: {
         model: '',
         show: false,
@@ -93,9 +103,13 @@ export default {
       },
     };
   },
+
   mounted() {
     this.getComments();
+    if (this.$supabase.auth.user()) this.user = true;
+    else this.user = false;
   },
+
   methods: {
     async getComments() {
       const { data } = await this.$supabase
@@ -105,10 +119,15 @@ export default {
         })
         .eq('post_id', this.page.uuid)
         .order('created_at', { ascending: false });
+
       this.comments.data = data;
+      this.loaders.comments.add = false;
+      this.loaders.comments.delete = false;
+      this.comments.model = '';
     },
 
     async sendComment() {
+      this.loaders.comments.add = true;
       await this.$supabase.from('comments').insert([
         {
           content: this.comments.model,
@@ -119,21 +138,27 @@ export default {
 
       this.getComments();
     },
+
+    async deleteComment({ id }) {
+      this.loaders.comments.delete = true;
+      await this.$supabase.from('comments').delete().match({ id });
+      this.getComments();
+    },
+
+    async login(provider) {
+      await this.$supabase.auth.signIn({ provider });
+    },
   },
+
   async asyncData({ $content, params }) {
     const page = await $content(`es/${params.slug}`).fetch();
     return { page };
   },
+
+  head() {
+    return {
+      title: this.page.title,
+    };
+  },
 };
 </script>
-
-<style>
-.slide-enter-active,
-.slide-leave-active {
-  @apply transition-all duration-500;
-}
-.slide-enter,
-.slide-leave-to {
-  @apply -translate-x-full;
-}
-</style>

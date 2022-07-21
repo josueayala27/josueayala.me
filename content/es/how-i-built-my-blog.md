@@ -6,4 +6,4 @@ allowComents: false
 isPublished: true
 ---
 
-Blog information
+Blog information 😜

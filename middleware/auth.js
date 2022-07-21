@@ -1,3 +1,1 @@
-export default async function ({ $supabase, $axios }) {
-  // console.log($supabase);
-}
+export default async ({ $supabase }) => true;

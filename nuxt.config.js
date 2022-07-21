@@ -2,7 +2,7 @@ import { getHighlighter } from 'shiki';
 
 export default {
   head: {
-    title: 'Josué Ayala | Personal blog',
+    title: 'Josué Ayala | Blog',
     htmlAttrs: {
       lang: 'en',
     },
@@ -17,11 +17,23 @@ export default {
 
   css: ['@/assets/css/main.css'],
 
-  plugins: ['@/plugins/supabase.ts', '@/plugins/filters.ts'],
+  plugins: [
+    '@/plugins/supabase.ts',
+    '@/plugins/filters.ts',
+    '@/plugins/dayjs.ts',
+    '@/plugins/v-click-outside.client.ts',
+    '@/plugins/auth.client.ts',
+  ],
 
   components: {
     global: true,
-    dirs: ['@/components/ui', '@/components/blog', '@/components/layout'],
+    dirs: [
+      '@/components/ui',
+      '@/components/ui/typography',
+      '@/components/ui/dropdown',
+      '@/components/blog',
+      '@/components/layout',
+    ],
   },
 
   buildModules: [
@@ -31,7 +43,17 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxt/content'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxt/content',
+    [
+      'nuxt-supabase',
+      {
+        supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
+        supabaseKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
+      },
+    ],
+  ],
 
   build: {
     postcss: {

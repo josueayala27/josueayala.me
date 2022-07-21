@@ -5,5 +5,5 @@ export default ({ $config }: any, inject: any) => {
     $config.NUXT_PUBLIC_SUPABASE_URL,
     $config.NUXT_PUBLIC_SUPABASE_ANON_KEY
   );
-  inject('supabase', supabase);
+  // inject('supabase', supabase);
 };
