@@ -2,7 +2,7 @@ import { getHighlighter } from 'shiki';
 
 export default {
   head: {
-    title: 'Josué Ayala | Personal blog',
+    title: 'Josué Ayala | Blog',
     htmlAttrs: {
       lang: 'en',
     },
@@ -21,11 +21,18 @@ export default {
     '@/plugins/supabase.ts',
     '@/plugins/filters.ts',
     '@/plugins/dayjs.ts',
+    '@/plugins/v-click-outside.client.ts',
   ],
 
   components: {
     global: true,
-    dirs: ['@/components/ui', '@/components/blog', '@/components/layout'],
+    dirs: [
+      '@/components/ui',
+      '@/components/ui/typography',
+      '@/components/ui/dropdown',
+      '@/components/blog',
+      '@/components/layout',
+    ],
   },
 
   buildModules: [
