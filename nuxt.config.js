@@ -17,7 +17,11 @@ export default {
 
   css: ['@/assets/css/main.css'],
 
-  plugins: ['@/plugins/supabase.ts', '@/plugins/filters.ts'],
+  plugins: [
+    '@/plugins/supabase.ts',
+    '@/plugins/filters.ts',
+    '@/plugins/dayjs.ts',
+  ],
 
   components: {
     global: true,
