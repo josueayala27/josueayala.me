@@ -22,6 +22,7 @@ export default {
     '@/plugins/filters.ts',
     '@/plugins/dayjs.ts',
     '@/plugins/v-click-outside.client.ts',
+    '@/plugins/auth.client.ts',
   ],
 
   components: {
@@ -42,7 +43,17 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxt/content'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxt/content',
+    [
+      'nuxt-supabase',
+      {
+        supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
+        supabaseKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
+      },
+    ],
+  ],
 
   build: {
     postcss: {

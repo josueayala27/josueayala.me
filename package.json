@@ -17,6 +17,7 @@
     "core-js": "^3.19.3",
     "dayjs": "^1.11.3",
     "nuxt": "^2.15.8",
+    "nuxt-supabase": "^2.3.1",
     "shiki": "^0.10.1",
     "v-click-outside": "^3.2.0",
     "vue": "^2.6.14",

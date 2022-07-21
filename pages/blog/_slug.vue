@@ -35,11 +35,24 @@
 
     <!-- Comments  -->
     <section class="flex flex-col gap-5">
-      <div class="flex justify-between items-center prose">
-        <h2>Coments ({{ comments.data.length }})</h2>
+      <div class="flex justify-between items-center">
+        <div class="prose">
+          <h2>Coments ({{ comments.data.length }})</h2>
+        </div>
+
+        <Button
+          v-if="!user"
+          @click="login('google')"
+          color="primary"
+          icon-align="left">
+          <template #icon>
+            <Icon name="plus" />
+          </template>
+          Write a comment
+        </Button>
       </div>
 
-      <div class="flex flex-col gap-2" v-if="$supabase.auth.user()">
+      <div class="flex flex-col gap-2" v-if="user">
         <Input
           type="text"
           placeholder="Write a comment"
@@ -73,6 +86,7 @@ export default {
 
   data() {
     return {
+      user: false,
       loaders: {
         comments: {
           get: false,
@@ -92,6 +106,8 @@ export default {
 
   mounted() {
     this.getComments();
+    if (this.$supabase.auth.user()) this.user = true;
+    else this.user = false;
   },
 
   methods: {
@@ -127,6 +143,10 @@ export default {
       this.loaders.comments.delete = true;
       await this.$supabase.from('comments').delete().match({ id });
       this.getComments();
+    },
+
+    async login(provider) {
+      await this.$supabase.auth.signIn({ provider });
     },
   },
 

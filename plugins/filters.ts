@@ -8,3 +8,9 @@ const formatter = new Intl.NumberFormat('en-US', {
 });
 
 vue.filter('dolar', (value: number): string => formatter.format(value));
+
+/* First letter uppercase */
+vue.filter(
+  'up',
+  (value: string): string => value.charAt(0).toUpperCase() + value.slice(1)
+);

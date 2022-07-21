@@ -15,7 +15,7 @@
           </Caption>
 
           <Caption>
-            {{ $dayjs(data.created_at).fromNow() }}
+            {{ $dayjs(data.created_at).fromNow() | up }}
           </Caption>
         </div>
       </div>
