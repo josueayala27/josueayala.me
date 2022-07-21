@@ -39,15 +39,15 @@
         <h2>Coments ({{ comments.data.length }})</h2>
       </div>
 
-      <div class="flex flex-col gap-2">
-        <input
-          class="rounded-lg p-4 outline-none bg-gray-100"
+      <div class="flex flex-col gap-2" v-if="$supabase.auth.user()">
+        <Input
           type="text"
-          placeholder="Enter comment"
+          placeholder="Write a comment"
           v-model="comments.model" />
         <div class="flex justify-end">
           <Button
-            :is-loading="loaders.comment"
+            color="primary"
+            :is-loading="loaders.comments.add"
             icon-align="left"
             @click="sendComment()">
             <template #icon>
@@ -58,7 +58,11 @@
         </div>
       </div>
 
-      <Comment :data="comment" v-for="(comment, i) in comments.data" :key="i" />
+      <Comment
+        @delete="(evt) => deleteComment(evt)"
+        :data="comment"
+        v-for="(comment, i) in comments.data"
+        :key="i" />
     </section>
   </div>
 </template>
@@ -66,11 +70,18 @@
 <script>
 export default {
   name: 'SlugPage',
+
   data() {
     return {
       loaders: {
-        comment: false,
+        comments: {
+          get: false,
+          delete: false,
+          add: false,
+        },
+        blog: {},
       },
+
       comments: {
         model: '',
         show: false,
@@ -78,9 +89,11 @@ export default {
       },
     };
   },
+
   mounted() {
     this.getComments();
   },
+
   methods: {
     async getComments() {
       const { data } = await this.$supabase
@@ -92,12 +105,13 @@ export default {
         .order('created_at', { ascending: false });
 
       this.comments.data = data;
-      this.loaders.comment = false;
+      this.loaders.comments.add = false;
+      this.loaders.comments.delete = false;
       this.comments.model = '';
     },
 
     async sendComment() {
-      this.loaders.comment = true;
+      this.loaders.comments.add = true;
       await this.$supabase.from('comments').insert([
         {
           content: this.comments.model,
@@ -108,21 +122,23 @@ export default {
 
       this.getComments();
     },
+
+    async deleteComment({ id }) {
+      this.loaders.comments.delete = true;
+      await this.$supabase.from('comments').delete().match({ id });
+      this.getComments();
+    },
   },
+
   async asyncData({ $content, params }) {
     const page = await $content(`es/${params.slug}`).fetch();
     return { page };
   },
+
+  head() {
+    return {
+      title: this.page.title,
+    };
+  },
 };
 </script>
-
-<style>
-.slide-enter-active,
-.slide-leave-active {
-  @apply transition-all duration-500;
-}
-.slide-enter,
-.slide-leave-to {
-  @apply -translate-x-full;
-}
-</style>
