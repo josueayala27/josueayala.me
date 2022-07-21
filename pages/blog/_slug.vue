@@ -127,7 +127,7 @@ export default {
     },
 
     async sendComment() {
-      if (!this.comments.model) return;
+      if (!this.comments.model.trim()) return;
 
       this.loaders.comments.add = true;
       await this.$supabase.from('comments').insert([

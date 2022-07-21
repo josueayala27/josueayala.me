@@ -23,6 +23,7 @@ export default {
     '@/plugins/dayjs.ts',
     '@/plugins/v-click-outside.client.ts',
     '@/plugins/auth.client.ts',
+    '@/plugins/v-sanitize.client.ts',
   ],
 
   components: {

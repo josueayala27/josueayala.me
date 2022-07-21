@@ -44,7 +44,7 @@
         </template>
       </Dropdown>
     </div>
-    <span v-html="data.content" class="text-sm"> </span>
+    <span class="text-sm"> {{ data.content }}</span>
   </article>
 </template>
 
