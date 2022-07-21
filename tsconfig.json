@@ -21,7 +21,8 @@
       "@types/node",
       "@nuxt/content",
       "@nuxtjs/i18n",
-      "nuxt-supabase"
+      "nuxt-supabase",
+      "types/v-click-outside.d.ts"
     ]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
