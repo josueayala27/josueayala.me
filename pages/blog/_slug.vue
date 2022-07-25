@@ -132,6 +132,51 @@ export default {
   head() {
     return {
       title: this.page.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.page.description,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.page.description,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.page.description,
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.page.title,
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content:
+            'https://mercandu.nyc3.digitaloceanspaces.com/products/5aa8fe12-303f-437e-9184-ae26f83e3a27.jpg',
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content:
+            'https://dev.josueyala.me/blog/using-lottie-files-with-nuxtjs',
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.page.title,
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content:
+            'https://www.josueyala.me/_nuxt/img/125269448_3566643150045828_3681845615705051439_n.84b6fb2.jpeg',
+        },
+      ],
     };
   },
 };
