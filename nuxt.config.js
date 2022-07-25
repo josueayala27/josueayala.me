@@ -19,6 +19,7 @@ export default {
 
   plugins: [
     '@/plugins/supabase.ts',
+    '@/plugins/firebase.ts',
     '@/plugins/filters.ts',
     '@/plugins/dayjs.ts',
     '@/plugins/v-click-outside.client.ts',

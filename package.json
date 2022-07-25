@@ -16,6 +16,7 @@
     "@supabase/supabase-js": "^1.35.4",
     "core-js": "^3.19.3",
     "dayjs": "^1.11.3",
+    "firebase": "^9.9.1",
     "nuxt": "^2.15.8",
     "nuxt-supabase": "^2.3.1",
     "shiki": "^0.10.1",

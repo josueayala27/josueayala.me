@@ -81,8 +81,12 @@
 </template>
 
 <script>
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+
 export default {
   name: 'SlugPage',
+
+  middleware: ['auth'],
 
   data() {
     return {
@@ -147,8 +151,18 @@ export default {
       this.getComments();
     },
 
-    async login(provider) {
-      await this.$supabase.auth.signIn({ provider });
+    async login() {
+      const provider = new GoogleAuthProvider();
+
+      const auth = getAuth();
+      const result = await signInWithPopup(auth, provider);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+
+      const user = await this.$axios.$get(
+        `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${token}`
+      );
+      console.log(user);
     },
   },
 
