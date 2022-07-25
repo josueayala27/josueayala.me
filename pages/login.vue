@@ -9,11 +9,5 @@
 export default {
   name: 'LoginPage',
   middleware: ['auth'],
-  methods: {
-    async login(provider) {
-      const { user } = await this.$supabase.auth.signIn({ provider });
-      console.log(user);
-    },
-  },
 };
 </script>

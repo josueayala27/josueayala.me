@@ -18,12 +18,10 @@ export default {
   css: ['@/assets/css/main.css'],
 
   plugins: [
-    '@/plugins/supabase.ts',
-    '@/plugins/firebase.ts',
+    '@/plugins/firebase.client.ts',
     '@/plugins/filters.ts',
     '@/plugins/dayjs.ts',
     '@/plugins/v-click-outside.client.ts',
-    '@/plugins/auth.client.ts',
     '@/plugins/v-sanitize.client.ts',
   ],
 
@@ -45,17 +43,7 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxt/content',
-    [
-      'nuxt-supabase',
-      {
-        supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
-        supabaseKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
-      },
-    ],
-  ],
+  modules: ['@nuxtjs/axios', '@nuxt/content'],
 
   build: {
     postcss: {
@@ -86,10 +74,5 @@ export default {
         return (code, lang) => highlighter.codeToHtml(code, lang);
       },
     },
-  },
-
-  publicRuntimeConfig: {
-    NUXT_PUBLIC_SUPABASE_URL: process.env.NUXT_PUBLIC_SUPABASE_URL,
-    NUXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
   },
 };

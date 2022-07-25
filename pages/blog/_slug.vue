@@ -34,7 +34,7 @@
     <Separator />
 
     <!-- Comments  -->
-    <section class="flex flex-col gap-5">
+    <section class="flex flex-col gap-5" v-if="false">
       <div class="flex justify-between items-center">
         <div class="prose">
           <h2>Coments ({{ comments.data.length }})</h2>
@@ -108,49 +108,7 @@ export default {
     };
   },
 
-  mounted() {
-    this.getComments();
-    if (this.$supabase.auth.user()) this.user = true;
-    else this.user = false;
-  },
-
   methods: {
-    async getComments() {
-      const { data } = await this.$supabase
-        .from('comments')
-        .select('content, created_at, id, is_pinned, user:user_id (*)', {
-          count: 'exact',
-        })
-        .eq('post_id', this.page.uuid)
-        .order('created_at', { ascending: false });
-
-      this.comments.data = data;
-      this.loaders.comments.add = false;
-      this.loaders.comments.delete = false;
-      this.comments.model = '';
-    },
-
-    async sendComment() {
-      if (!this.comments.model.trim()) return;
-
-      this.loaders.comments.add = true;
-      await this.$supabase.from('comments').insert([
-        {
-          content: this.comments.model,
-          post_id: this.page.uuid,
-          user_id: this.$supabase.auth.user().id,
-        },
-      ]);
-
-      this.getComments();
-    },
-
-    async deleteComment({ id }) {
-      this.loaders.comments.delete = true;
-      await this.$supabase.from('comments').delete().match({ id });
-      this.getComments();
-    },
-
     async login() {
       const provider = new GoogleAuthProvider();
 

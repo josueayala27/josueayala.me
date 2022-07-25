@@ -21,10 +21,7 @@
       </div>
 
       <!-- Comment options -->
-      <Dropdown
-        v-if="
-          $supabase.auth.user() && $supabase.auth.user().id === data.user.id
-        ">
+      <Dropdown>
         <Icon class="cursor-pointer" name="dots-vertical" />
         <template #items>
           <DropdownItem>
