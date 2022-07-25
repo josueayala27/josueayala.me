@@ -157,7 +157,7 @@ export default {
           hid: 'og:image',
           name: 'og:image',
           content:
-            'https://mercandu.nyc3.digitaloceanspaces.com/products/5aa8fe12-303f-437e-9184-ae26f83e3a27.jpg',
+            'https://www.josueyala.me/_nuxt/img/125269448_3566643150045828_3681845615705051439_n.84b6fb2.jpeg',
         },
         {
           hid: 'og:url',
