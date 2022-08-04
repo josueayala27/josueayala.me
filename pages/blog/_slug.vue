@@ -31,7 +31,7 @@
       class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert"
       :document="page" />
 
-    <Separator />
+    <!-- <Separator /> -->
 
     <!-- Comments  -->
     <section class="flex flex-col gap-5" v-if="false">

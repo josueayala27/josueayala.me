@@ -8,23 +8,23 @@ isPublished: true
 
 ## ¿Qué es un lottie?
 
-Un lottie es simplemente un archivo `JSON` que contiene animaciones vectoriales de nuestras animaciones, este formato nos permite mantener una animación codificada de alta calidad, mostrando fidelidad y compatibilidad entre diferentes dispositivos, <a href="https://lottiefiles.com/what-is-lottie" target="_blank">leer más</a>.
+Un lottie es simplemente un archivo `JSON` que contiene animaciones vectoriales de nuestras animaciones, este formato nos permite mantener una animación codificada de alta calidad y rendimiento, mostrando fidelidad y compatibilidad entre diferentes dispositivos, [leer más](https://lottiefiles.com/what-is-lottie).
 
 ## Instalando el paquete lottie-web
 
-Vamos a hacer uso del paquete `lottie-web` que es proporcionado y patrocinado por <a href="https://airbnb.io" target="_blank">airbnb.io</a>
-
-Para configurarlo, solo tiene que agregar la dependencia con Yarn o NPM.
+Vamos a hacer uso del paquete `lottie-web` que es proporcionado y patrocinado por [airbnb.io](https://airbnb.io), para configurarlo, solo tienes que agregar la dependencia con `yarn` o `npm`.
 
 ```shell
 yarn add lottie-web
 ```
 
-Una vez se haya finalizado la instalación no es necesario agregarlo como complemento en `nuxt.config.js`.
+[comment]: <> (Ver más link de la libreria.)
+
+[comment]: <> (Una vez se haya finalizado la instalación no es necesario agregarlo como complemento en `nuxt.config.js`.)
 
 ## Usando el paquete
 
-Primeramente vamos a importar nuestro paquete dentro de nuestro pagina o componente donde queramos utilizar un archivo lottie.
+Primeramente vamos a realizar una importación del paquete dentro de nuestro componente.
 
 ```js
 import lottie from 'lottie-web';
@@ -36,11 +36,11 @@ Ahora tendremos la refererencia `lottie` que se podrá utilizar en cualquier por
 loadLottie(reference, file) {
   // Lottie config instance
   const animation = lottie.loadAnimation({
-    container: this.$refs.reference,
+    container: this.$refs[reference],
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: `animations/${file}.json`,
+    path: `${window.location.origin}/animations/${file}.json`,
   });
 
   // Init instance animation
@@ -55,7 +55,31 @@ loadLottie(reference, file) {
 Nuestro método `loadLottie(...)` recibe 2 parametros, el primer parametro es un elemento `HTML` que nos servirá de contenedor para nuestra animación:
 
 ```html
-<div ref="animation"></div>
+<div ref="animation-container"></div>
 ```
 
-El segundo parametro es el nombre del archivo que nosotros hemos definido, en este caso como en la configuración ya hemos añadido la ruta en donde se encuentra, basta solamente usar el nombre del archivo `json`
+El segundo parametro es el nombre del archivo, basta solamente usar el nombre del archivo sin la extensión `.json`.
+
+Para usar la animación vamos a hacer uso del hook [mounted](https://vuejs.org/api/options-lifecycle.html#mounted), _Esto ejecutará nuestra animación una vez se cargue la pagina_.
+
+```js
+mounted() {
+  this.loadLottie('animation-container', 'animation-1');
+}
+```
+
+¡**Listo**, eso es todo! ahora tendremos como resultado una bella animación reproduciendose en nuestro sitio:
+
+<Lottie src="114334-hello-apple"></Lottie>
+
+## Personalizar animación
+
+De aquí en adelante la única limitante es tu imaginación, puedes crear diferentes configuraciones y personalizaciones posibles gracias a la amplia [api de configuración](https://airbnb.io/lottie/#/web) que nos proporciona el paquete `lottie-web`, incluso puedes hacer uso de los diferentes eventos como `complete`, `loopComplete`, entre otros, por ejemplo:
+
+```js
+animation.addEventListener('loopComplete', () => {
+  console.log('The loop is complete');
+});
+```
+
+Puedes mandarme tus proyectos asombrosos haciendo uso de esta hermosa librería.
