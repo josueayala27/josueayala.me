@@ -1,6 +1,6 @@
 ---
 uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
-title: Using lottie files with NuxtJS
+title: Usando archivos de lottie con NuxtJS
 description: A menudo usar animaciones en nuestra web no es un trabajo facil, por lo que en este blog vamos a aprender a usar animaciones lottie dentro de nuestro proyecto con nuxtJS facilmente.
 allowComents: false
 isPublished: true
@@ -48,4 +48,14 @@ loadLottie(reference, file) {
 }
 ```
 
-Nuestro método `loadLottie(...)` recibe 2 parametros, el primer parametro es un elemento `HTML` que nos servira de contenedor
+<Alert type="warning">
+  <strong>Nota:</strong> <code>path</code> recibe la ruta en donde se encuentra tu animación, tener en cuenta que se esta accediendo a un archivo estatico, por lo que la carpeta debe de estar dentro de <code>static</code>, ejemplo: <code>static/animations/{file}.json</code>
+</Alert>
+
+Nuestro método `loadLottie(...)` recibe 2 parametros, el primer parametro es un elemento `HTML` que nos servirá de contenedor para nuestra animación:
+
+```html
+<div ref="animation"></div>
+```
+
+El segundo parametro es el nombre del archivo que nosotros hemos definido, en este caso como en la configuración ya hemos añadido la ruta en donde se encuentra, basta solamente usar el nombre del archivo `json`
