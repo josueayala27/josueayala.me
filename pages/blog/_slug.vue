@@ -28,7 +28,7 @@
 
     <!-- Content  -->
     <nuxt-content
-      class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert"
+      class="prose prose-code:before:content-none prose-code:after:content-none hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert"
       :document="page" />
 
     <!-- <Separator /> -->

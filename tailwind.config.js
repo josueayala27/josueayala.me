@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
-      'jetbrains-mono': ['JetBrains Mono', 'sans-serif'],
+      mono: ['JetBrains Mono', 'sans-serif'],
     },
     extend: {
       colors: {
