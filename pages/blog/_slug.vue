@@ -1,6 +1,8 @@
 <template>
   <div class="max-w-none">
-    <Breadcrumb />
+    <section class="py-6 prose capitalize">
+      <p>{{ $dayjs(page.createdAt).format('MMM D, YYYY') }}</p>
+    </section>
 
     <!-- Header -->
     <section class="prose">
@@ -32,6 +34,15 @@
       :document="page" />
 
     <Separator />
+
+    <div class="prose flex gap-3">
+      <Icon
+        @click="getURL"
+        class="cursor-pointer hover:text-[#1DA1F2] transition-all"
+        size="1.5rem"
+        category="solid"
+        name="twitter" />
+    </div>
 
     <!-- Comments  -->
     <section class="flex flex-col gap-5" v-if="false">
@@ -121,6 +132,13 @@ export default {
         `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${token}`
       );
       console.log(user);
+    },
+
+    getURL() {
+      window.open(
+        `https://twitter.com/share?text=${this.page.title}&url=${window.location.href}`,
+        '_blank'
+      );
     },
   },
 
