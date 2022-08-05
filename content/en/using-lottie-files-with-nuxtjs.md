@@ -1,14 +1,14 @@
 ---
 uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
-title: Usando archivos lottie con NuxtJS
-description: A menudo usar animaciones en nuestra web no es un trabajo fácil, por lo que en este blog vamos a aprender a usar animaciones lottie dentro de nuestro proyecto con nuxtJS fácilmente.
+title: Using lottie files with nuxtJS
+description: Often using animations on our website is not an easy job, so in this blog we are going to learn how to use lottie animations within our project with nuxtJS easily.
 allowComents: false
 isPublished: true
 ---
 
 ## ¿Qué es un lottie?
 
-Un lottie es simplemente un archivo `JSON` que contiene configuraciones vectoriales de nuestras animaciones, este formato nos permite mantener una animación codificada de alta calidad y rendimiento, mostrando fidelidad y compatibilidad entre diferentes dispositivos, [leer más](https://lottiefiles.com/what-is-lottie).
+A lottie is just a `JSON` which contains vector settings of our animations, este formato nos permite mantener una animación codificada de alta calidad y rendimiento, mostrando fidelidad y compatibilidad entre diferentes dispositivos, [leer más](https://lottiefiles.com/what-is-lottie).
 
 [Ver archivo lottie de ejemplo ->](https://assets5.lottiefiles.com/packages/lf20_rbtawnwz.json)
 
