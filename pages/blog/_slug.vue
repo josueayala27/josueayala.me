@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-none">
-    <section class="py-6 prose capitalize">
-      <p>{{ $dayjs(page.createdAt).format('MMM D, YYYY') }}</p>
+    <section class="py-3 prose capitalize">
+      <!-- <p>Tutorials</p> -->
     </section>
 
     <!-- Header -->

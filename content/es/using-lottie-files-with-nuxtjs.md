@@ -86,7 +86,7 @@ mounted() {
 
 ## Complementos de animación
 
-De aquí en adelante la única limitante es tu imaginación, puedes crear diferentes configuraciones y personalizaciones gracias a la amplia [api de configuración](https://airbnb.io/lottie/#/web) que nos proporciona el paquete `lottie-web`, incluso puedes hacer uso de los diferentes eventos como `[onComplete, onLoopComplete, onEnterFrame, onSegmentStart]`, por ejemplo:
+De aquí en adelante la única limitante es tu imaginación, puedes crear diferentes configuraciones y personalizaciones gracias a la amplia [api de configuración](https://airbnb.io/lottie/#/web) que nos proporciona el paquete `lottie-web`, incluso puedes hacer uso de los diferentes eventos como `onComplete, onLoopComplete, onEnterFrame, onSegmentStart`, por ejemplo:
 
 ```js
 animation.addEventListener('loopComplete', () => {
