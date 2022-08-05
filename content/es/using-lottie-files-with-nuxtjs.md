@@ -1,7 +1,7 @@
 ---
 uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
 title: Usando archivos lottie con NuxtJS
-description: A menudo usar animaciones en nuestra web no es un trabajo fácil, por lo que en este blog vamos a aprender a usar animaciones lottie dentro de nuestro proyecto con nuxtJS facilmente.
+description: A menudo usar animaciones en nuestra web no es un trabajo fácil, por lo que en este blog vamos a aprender a usar animaciones lottie dentro de nuestro proyecto con nuxtJS fácilmente.
 allowComents: false
 isPublished: true
 ---
@@ -32,7 +32,7 @@ Primeramente vamos a realizar una importación del paquete dentro de nuestro com
 import lottie from 'lottie-web';
 ```
 
-Ahora tenemos la refererencia `lottie` que se podrá utilizar en cualquier porción de código, para eso vamos a crear un método que nos permitirá generar una instancia de nuestra animación:
+Ahora tenemos la referencia `lottie` que se podrá utilizar en cualquier porción de código, para eso vamos a crear un método que nos permitirá generar una instancia de nuestra animación:
 
 ```js
 loadLottie(reference, file) {
@@ -64,15 +64,15 @@ Ver más información de la [api](http://airbnb.io/lottie/#/web).
   <strong>Nota:</strong> <code>path</code> recibe la ruta relativa de tu animación, por lo que todas tus animaciones deben estar dentro de la carpeta <code>static</code>, ejemplo: <code>static/animations/{file-name}.json</code>
 </Alert>
 
-Nuestro método `loadLottie(...)` recibe 2 parametros, el primer parametro es un elemento `HTML` que nos servirá de contenedor para nuestra animación:
+Nuestro método `loadLottie(...)` recibe 2 parámetros, el primer parámetro es un elemento `HTML` que nos servirá de contenedor para nuestra animación:
 
 ```html
 <div ref="animation-container"></div>
 ```
 
-El segundo parametro es el nombre del archivo, basta solamente usar el nombre sin la extensión `.json`.
+El segundo parámetro es el nombre del archivo, basta solamente usar el nombre sin la extensión `.json`.
 
-Para usar la animación vamos a hacer uso del hook [mounted](https://vuejs.org/api/options-lifecycle.html#mounted), _Esto ejecutará nuestra animación una vez se cargue la pagina_.
+Para usar la animación vamos a hacer uso del hook [mounted](https://vuejs.org/api/options-lifecycle.html#mounted), _Esto ejecutará nuestra animación una vez se cargue la página_.
 
 ```js
 mounted() {
@@ -80,7 +80,7 @@ mounted() {
 }
 ```
 
-¡**Listo**, eso es todo! ahora tendremos como resultado una bella animación reproduciendose en nuestro sitio:
+¡**Listo**, eso es todo! Ahora tendremos como resultado una bella animación reproduciéndose en nuestro sitio:
 
 <Lottie src="78790-hello"></Lottie>
 
