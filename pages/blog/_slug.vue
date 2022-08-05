@@ -142,8 +142,8 @@ export default {
     },
   },
 
-  async asyncData({ $content, params }) {
-    const page = await $content(`es/${params.slug}`).fetch();
+  async asyncData({ $content, params, app }) {
+    const page = await $content(app.i18n.locale, params.slug).fetch();
     return { page };
   },
 

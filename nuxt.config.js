@@ -1,4 +1,6 @@
-import { getHighlighter } from 'shiki';
+import i18n from './config/i18n';
+import googleFonts from './config/google-fonts';
+import content from './config/content';
 
 export default {
   head: {
@@ -49,7 +51,7 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxt/content'],
+  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/i18n'],
 
   build: {
     postcss: {
@@ -60,25 +62,7 @@ export default {
     },
   },
 
-  googleFonts: {
-    display: 'swap',
-    preload: true,
-    download: true,
-    overwriting: false,
-    families: {
-      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      'JetBrains Mono': [100, 200, 300, 400, 500, 600, 700, 800, 900],
-    },
-  },
-
-  content: {
-    markdown: {
-      async highlighter() {
-        const highlighter = await getHighlighter({
-          theme: 'dracula',
-        });
-        return (code, lang) => highlighter.codeToHtml(code, lang);
-      },
-    },
-  },
+  content,
+  googleFonts,
+  i18n,
 };
