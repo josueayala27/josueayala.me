@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-none">
-    <section class="py-6 prose capitalize">
-      <p>{{ $dayjs(page.createdAt).format('MMM D, YYYY') }}</p>
+    <section class="py-3 prose capitalize">
+      <!-- <p>Tutorials</p> -->
     </section>
 
     <!-- Header -->
@@ -30,7 +30,7 @@
 
     <!-- Content  -->
     <nuxt-content
-      class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert"
+      class="prose prose-code:before:content-none prose-code:after:content-none hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert"
       :document="page" />
 
     <Separator />

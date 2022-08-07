@@ -11,8 +11,8 @@
 <script>
 export default {
   name: 'IndexPage',
-  async asyncData({ $content }) {
-    const posts = await $content('es')
+  async asyncData({ $content, app }) {
+    const posts = await $content(app.i18n.locale)
       .limit(5)
       .where({ isPublished: true })
       .only(['description', 'title', 'slug'])

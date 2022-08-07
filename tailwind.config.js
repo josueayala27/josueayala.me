@@ -2,6 +2,7 @@ module.exports = {
   darkMode: ['class'],
   content: [
     './components/**/*.{js,vue,ts}',
+    './content/**/*.md',
     './layouts/**/*.vue',
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
@@ -10,7 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
-      'jetbrains-mono': ['JetBrains Mono', 'sans-serif'],
+      mono: ['JetBrains Mono', 'sans-serif'],
     },
     extend: {
       colors: {

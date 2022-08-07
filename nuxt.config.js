@@ -40,6 +40,7 @@ export default {
       '@/components/ui/typography',
       '@/components/ui/dropdown',
       '@/components/blog',
+      '@/components/blog/using-lottie-files-with-nuxtjs',
       '@/components/layout',
     ],
   },
