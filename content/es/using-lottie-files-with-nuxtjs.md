@@ -52,9 +52,9 @@ loadLottie(reference, file) {
 
 Repasemos algunos puntos claves:
 
-- `container`: Elemento DOM sobre el que se renderiza la animación
+- `container`: Elemento DOM sobre el que se renderiza la animación.
 - `renderer`: `svg` / `canvas` / `html` para configurar el renderizador.
-- `loop`: `true` / `false` / `number`
+- `loop`: `true` / `false` / `number`.
 - `autoplay`: `true` / `false` la animación debería comenzar a reproducirse tan pronto como esté lista.
 - `path`: Ruta relativa al objeto de animación. (Los datos de animación y la ruta son mutuamente excluyentes).
 
