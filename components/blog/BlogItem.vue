@@ -8,10 +8,11 @@
     "
     v-bind="{ ...$attrs }"
     class="cursor-pointer group">
-    <h2 class="group-hover:text-pastel-green-600 transition-all duration-300">
+    <div class="py-3"></div>
+    <h1 class="group-hover:text-pastel-green-600 transition-all duration-300">
       {{ data.title }}
-    </h2>
-    <p class="text-justify">
+    </h1>
+    <p>
       {{ data.description }}
     </p>
     <div class="flex items-center gap-1">
