@@ -26,7 +26,7 @@ yarn add lottie-web
 
 ## Usando el paquete
 
-Primeramente vamos a realizar una importación del paquete dentro de nuestro componente.
+Primeramente, vamos a realizar una importación del paquete dentro de nuestro componente.
 
 ```js
 import lottie from 'lottie-web';
@@ -50,12 +50,12 @@ loadLottie(reference, file) {
 }
 ```
 
-Repasemos algunos puntos clave:
+Repasemos algunos puntos claves:
 
-- `container`: Elemento DOM sobre el que renderizar la animación.
+- `container`: Elemento DOM sobre el que se renderiza la animación
 - `renderer`: `svg` / `canvas` / `html` para configurar el renderizador.
 - `loop`: `true` / `false` / `number`
-- `autoplay`: `true` / `false` la animación debería comenzar a reproducirse tan pronto como esté listo.
+- `autoplay`: `true` / `false` la animación debería comenzar a reproducirse tan pronto como esté lista.
 - `path`: Ruta relativa al objeto de animación. (Los datos de animación y la ruta son mutuamente excluyentes).
 
 Ver más información de la [api](http://airbnb.io/lottie/#/web).
@@ -72,7 +72,7 @@ Nuestro método `loadLottie(...)` recibe 2 parámetros, el primer parámetro es 
 
 El segundo parámetro es el nombre del archivo, basta solamente usar el nombre sin la extensión `.json`.
 
-Para usar la animación vamos a hacer uso del hook [mounted](https://vuejs.org/api/options-lifecycle.html#mounted), _Esto ejecutará nuestra animación una vez se cargue la página_.
+Para usar la animación vamos a hacer uso del hook [mounted](https://vuejs.org/api/options-lifecycle.html#mounted), Esto ejecutará nuestra animación una vez se cargue la página.
 
 ```js
 mounted() {
