@@ -1,20 +1,20 @@
 ---
 uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
 title: Using lottie files with nuxtJS
-description: Often using animations on our website is not an easy job, so in this blog we are going to learn how to use lottie animations within our project with nuxtJS easily.
+description: Many times using animations on our website is not an easy job, so in this blog we are going to learn how to use lottie animations within our project with nuxtJS easily.
 allowComents: false
 isPublished: true
 ---
 
-## ¿Qué es un lottie?
+## What is a lottie?
 
-A lottie is just a `JSON` which contains vector settings of our animations, este formato nos permite mantener una animación codificada de alta calidad y rendimiento, mostrando fidelidad y compatibilidad entre diferentes dispositivos, [leer más](https://lottiefiles.com/what-is-lottie).
+A lottie is a `JSON` file containing vector settings of our animations, this format allows us to maintain a high quality and performance encoded animation, showing fidelity and compatibility between different devices, [read more](https://lottiefiles.com/what-is-lottie).
 
-[Ver archivo lottie de ejemplo ->](https://assets5.lottiefiles.com/packages/lf20_rbtawnwz.json)
+[View example lottie file ->](https://assets5.lottiefiles.com/packages/lf20_rbtawnwz.json)
 
-## Instalando el paquete lottie-web
+## Installing the lottie-web package
 
-Vamos a hacer uso del paquete `lottie-web` que es proporcionado y patrocinado por [airbnb.io](https://airbnb.io), para configurarlo solo tienes que agregar la dependencia con `yarn` o `npm`.
+We are going to use the `lottie-web` package which is provided and sponsored by [airbnb.io](https://airbnb.io), to configure it you just need to add the dependency with `yarn` or `npm`.
 
 ```shell
 yarn add lottie-web
@@ -24,15 +24,15 @@ yarn add lottie-web
 
 [comment]: <> (Una vez se haya finalizado la instalación no es necesario agregarlo como complemento en `nuxt.config.js`.)
 
-## Usando el paquete
+## Using the package
 
-Primeramente vamos a realizar una importación del paquete dentro de nuestro componente.
+First of all, we are going to import the package into our component.
 
 ```js
 import lottie from 'lottie-web';
 ```
 
-Ahora tenemos la referencia `lottie` que se podrá utilizar en cualquier porción de código, para eso vamos a crear un método que nos permitirá generar una instancia de nuestra animación:
+Now we have the `lottie` reference which can be used anywhere in the code, for that we are going to create a method that will allow us to generate an instance of our animation:
 
 ```js
 loadLottie(reference, file) {
@@ -50,29 +50,29 @@ loadLottie(reference, file) {
 }
 ```
 
-Repasemos algunos puntos clave:
+Let's review some important points:
 
-- `container`: Elemento DOM sobre el que renderizar la animación.
-- `renderer`: `svg` / `canvas` / `html` para configurar el renderizador.
-- `loop`: `true` / `false` / `number`
-- `autoplay`: `true` / `false` la animación debería comenzar a reproducirse tan pronto como esté listo.
-- `path`: Ruta relativa al objeto de animación. (Los datos de animación y la ruta son mutuamente excluyentes).
+- `container`: Dom element on which to render the animation.
+- `renderer`: `svg` / `canvas` / `html` to set the renderer.
+- `loop`: `true` / `false` / `number`.
+- `autoplay`: `true` / `false` it will start playing as soon as it is ready.
+- `path`: The relative path to the animation object. (animationData and path are mutually exclusive).
 
-Ver más información de la [api](http://airbnb.io/lottie/#/web).
+See more information about the [api](http://airbnb.io/lottie/#/web).
 
 <Alert type="warning">
-  <strong>Nota:</strong> <code>path</code> recibe la ruta relativa de tu animación, por lo que todas tus animaciones deben estar dentro de la carpeta <code>static</code>, ejemplo: <code>static/animations/{file-name}.json</code>
+  <strong>Note:</strong> <code>path</code> receives the relative path of your animation, so all your animations must be inside the <code>static</code> folder, for example: <code>static/animations/{file-name}.json</code>
 </Alert>
 
-Nuestro método `loadLottie(...)` recibe 2 parámetros, el primer parámetro es un elemento `HTML` que nos servirá de contenedor para nuestra animación:
+Our `loadLottie(...)` method receives 2 parameters, the first parameter is an `HTML` element that will serve as a container for our animation:
 
 ```html
 <div ref="animation-container"></div>
 ```
 
-El segundo parámetro es el nombre del archivo, basta solamente usar el nombre sin la extensión `.json`.
+The second parameter is the name of the file, just use the name without the `.json` extension.
 
-Para usar la animación vamos a hacer uso del hook [mounted](https://vuejs.org/api/options-lifecycle.html#mounted), _Esto ejecutará nuestra animación una vez se cargue la página_.
+To use the animation we are going to use the [mounted](https://vuejs.org/api/options-lifecycle.html#mounted) hook, this will run our animation once the page loads.
 
 ```js
 mounted() {
@@ -80,13 +80,13 @@ mounted() {
 }
 ```
 
-¡**Listo**, eso es todo! Ahora tendremos como resultado una bella animación reproduciéndose en nuestro sitio:
+**We are set**, that's it! Now we will have as a result a beautiful animation playing on our site:
 
 <Lottie src="78790-hello"></Lottie>
 
-## Complementos de animación
+## Animation events
 
-De aquí en adelante la única limitante es tu imaginación, puedes crear diferentes configuraciones y personalizaciones gracias a la amplia [api de configuración](https://airbnb.io/lottie/#/web) que nos proporciona el paquete `lottie-web`, incluso puedes hacer uso de los diferentes eventos como `onComplete, onLoopComplete, onEnterFrame, onSegmentStart`, por ejemplo:
+From here on out the only limitation is your imagination, you can create different configurations and customizations thanks to the extensive [configuration api](https://airbnb.io/lottie/#/web) provided by the `lottie-web` package, you can even make use of the different events as `onComplete, onLoopComplete, onEnterFrame, onSegmentStart`, for example:
 
 ```js
 animation.addEventListener('loopComplete', () => {
@@ -94,4 +94,4 @@ animation.addEventListener('loopComplete', () => {
 });
 ```
 
-Esta es solamente una pequeña referencia de uso, puedes echar a volar tu imaginación y no dudes en mandarme tus proyectos asombrosos haciendo uso de esta hermosa librería.
+This is just a small usage reference, you can exploit your imagination and feel free to [send me](mailto:hello@josueayala.me) your amazing projects using this beautiful library.
