@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { FirebaseApp, initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 
 export default ({ $config }: any) => {
@@ -12,6 +12,6 @@ export default ({ $config }: any) => {
     measurementId: $config.FIREBASE_MEASUREMENT_ID,
   };
 
-  const app = initializeApp(firebaseConfig);
+  const app: FirebaseApp = initializeApp(firebaseConfig);
   getAnalytics(app);
 };
