@@ -177,14 +177,12 @@ export default {
         {
           hid: 'og:image',
           name: 'og:image',
-          content:
-            'https://www.josueyala.me/_nuxt/img/125269448_3566643150045828_3681845615705051439_n.84b6fb2.jpeg',
+          content: `${this.$config.BASE_URL}/og/${this.$i18n.locale}/${this.page.slug}.png`,
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content:
-            'https://dev.josueyala.me/blog/using-lottie-files-with-nuxtjs',
+          content: `${this.$config.BASE_URL}/blog/${this.page.slug}`,
         },
         {
           hid: 'twitter:title',
@@ -194,8 +192,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content:
-            'https://www.josueyala.me/_nuxt/img/125269448_3566643150045828_3681845615705051439_n.84b6fb2.jpeg',
+          content: `${this.$config.BASE_URL}/og/${this.$i18n.locale}/${this.page.slug}.png`,
         },
       ],
     };
