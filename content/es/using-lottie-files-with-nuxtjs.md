@@ -94,4 +94,4 @@ animation.addEventListener('loopComplete', () => {
 });
 ```
 
-Esta es solamente una pequeña referencia de uso, puedes echar a volar tu imaginación y no dudes en mandarme tus proyectos asombrosos haciendo uso de esta hermosa librería.
+Esta es solamente una pequeña referencia de uso, puedes echar a volar tu imaginación y no dudes en [mandarme](mailto:hello@josueayala.me) tus proyectos asombrosos haciendo uso de esta hermosa librería.
