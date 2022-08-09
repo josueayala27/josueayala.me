@@ -1,6 +1,9 @@
 <template>
-  <div class="max-w-[42rem] mx-auto px-6">
-    <main>
+  <div class="max-w-[42rem] mx-auto px-6 dark:bg-black dark:text-white">
+    <header>
+      <Navigation />
+    </header>
+    <main class="py-4 w-full">
       <Nuxt />
     </main>
   </div>

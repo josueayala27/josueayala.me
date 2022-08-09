@@ -19,5 +19,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'global-require': 'off',
+    'import/no-dynamic-require': 'off',
   },
 };

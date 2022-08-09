@@ -5,7 +5,3 @@
 pre {
   @apply p-5;
 }
-
-code {
-  @apply font-jetbrains-mono !important;
-}
