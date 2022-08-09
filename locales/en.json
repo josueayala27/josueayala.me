@@ -1,5 +1,11 @@
 {
   "home": {
     "read-more": "Read more"
+  },
+  "blog": {
+    "posted": "Posted",
+    "on-this-page": "On this page",
+    "write-a-comment": "Write a comment",
+    "send": "Send"
   }
 }

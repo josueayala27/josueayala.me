@@ -1,7 +1,10 @@
 <template>
   <div class="max-w-none">
     <section class="py-3 prose capitalize">
-      <!-- <p>Tutorials</p> -->
+      <p>
+        {{ $t('blog.posted') }}
+        {{ $dayjs(page.createdAt).locale($i18n.locale).format('MM MMMM YYYY') }}
+      </p>
     </section>
 
     <!-- Header -->
@@ -15,7 +18,7 @@
     <!-- Table of content -->
     <section
       class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline">
-      <h2>On this page</h2>
+      <h2>{{ $t('blog.on-this-page') }}</h2>
       <ul>
         <li
           v-for="(link, i) in page.toc"
