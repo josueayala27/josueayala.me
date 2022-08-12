@@ -1,16 +1,16 @@
 ---
 uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
-title: Usando archivos lottie con NuxtJS
-description: A menudo usar animaciones en nuestra web no es un trabajo fácil, por lo que en este blog vamos a aprender a usar animaciones lottie dentro de nuestro proyecto con nuxtJS fácilmente.
+title: Usando archivos Lottie con nuxt.js
+description: A menudo usar animaciones en nuestra web no es un trabajo fácil, por lo que en este blog vamos a aprender a usar animaciones Lottie dentro de nuestro proyecto con nuxt.js fácilmente.
 allowComents: false
 isPublished: true
 ---
 
-## ¿Qué es un lottie?
+## ¿Qué es un Lottie?
 
-Un lottie es simplemente un archivo `JSON` que contiene configuraciones vectoriales de nuestras animaciones, este formato nos permite mantener una animación codificada de alta calidad y rendimiento, mostrando fidelidad y compatibilidad entre diferentes dispositivos, [leer más](https://lottiefiles.com/what-is-lottie).
+Un Lottie es simplemente un archivo `JSON` que contiene configuraciones vectoriales de nuestras animaciones, este formato nos permite mantener una animación codificada de alta calidad y rendimiento, mostrando fidelidad y compatibilidad entre diferentes dispositivos, ver la [guía oficial](https://lottiefiles.com/what-is-lottie).
 
-[Ver archivo lottie de ejemplo ->](https://assets5.lottiefiles.com/packages/lf20_rbtawnwz.json)
+[Ver archivo Lottie de ejemplo ->](https://assets5.lottiefiles.com/packages/lf20_rbtawnwz.json)
 
 ## Instalando el paquete lottie-web
 
@@ -64,15 +64,17 @@ Ver más información de la [api](http://airbnb.io/lottie/#/web).
   <strong>Nota:</strong> <code>path</code> recibe la ruta relativa de tu animación, por lo que todas tus animaciones deben estar dentro de la carpeta <code>static</code>, ejemplo: <code>static/animations/{file-name}.json</code>
 </Alert>
 
-Nuestro método `loadLottie(...)` recibe 2 parámetros, el primer parámetro es un elemento `HTML` que nos servirá de contenedor para nuestra animación:
+Nuestro método `loadLottie(...)` recibe 2 parámetros:
+
+- El primer parámetro es un elemento `HTML` que nos servirá de contenedor para nuestra animación:
 
 ```html
 <div ref="animation-container"></div>
 ```
 
-El segundo parámetro es el nombre del archivo, basta solamente usar el nombre sin la extensión `.json`.
+- El segundo parámetro es el nombre del archivo, basta solamente usar el nombre sin la extensión `.json`.
 
-Para usar la animación vamos a hacer uso del hook [mounted](https://vuejs.org/api/options-lifecycle.html#mounted), Esto ejecutará nuestra animación una vez se cargue la página.
+Para usar la animación vamos a hacer uso del hook [mounted](https://vuejs.org/api/options-lifecycle.html#mounted). Esto ejecutará nuestra animación una vez se cargue la página.
 
 ```js
 mounted() {
@@ -86,7 +88,7 @@ mounted() {
 
 ## Complementos de animación
 
-De aquí en adelante la única limitante es tu imaginación, puedes crear diferentes configuraciones y personalizaciones gracias a la amplia [api de configuración](https://airbnb.io/lottie/#/web) que nos proporciona el paquete `lottie-web`, incluso puedes hacer uso de los diferentes eventos como `onComplete, onLoopComplete, onEnterFrame, onSegmentStart`, por ejemplo:
+De aquí en adelante la única limitante es tu imaginación. Puedes crear diferentes configuraciones y personalizaciones gracias a la amplia [api de configuración](https://airbnb.io/lottie/#/web) que nos proporciona el paquete `lottie-web`, incluso puedes hacer uso de los diferentes eventos como `onComplete, onLoopComplete, onEnterFrame, onSegmentStart`, por ejemplo:
 
 ```js
 animation.addEventListener('loopComplete', () => {
@@ -94,4 +96,4 @@ animation.addEventListener('loopComplete', () => {
 });
 ```
 
-Esta es solamente una pequeña referencia de uso, puedes echar a volar tu imaginación y no dudes en [mandarme](mailto:hello@josueayala.me) tus proyectos asombrosos haciendo uso de esta hermosa librería.
+Esta es solamente una pequeña referencia de uso. Puedes echar a volar tu imaginación y no dudes en [mandarme](mailto:hello@josueayala.me) tus proyectos asombrosos haciendo uso de esta hermosa librería.
