@@ -5,7 +5,7 @@
     "source.fixAll.eslint": true
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"

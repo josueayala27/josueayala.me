@@ -1,16 +1,16 @@
 ---
 uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
-title: Using lottie files with nuxtJS
-description: Many times using animations on our website is not an easy job, so in this blog we are going to learn how to use lottie animations within our project with nuxtJS easily.
+title: Using Lottie files with nuxt.js
+description: Many times using animations on our website is not an easy job, so in this blog we are going to learn how to use Lottie animations within our project with nuxt.js easily.
 allowComents: false
 isPublished: true
 ---
 
-## What is a lottie?
+## What is a Lottie?
 
-A lottie is a `JSON` file containing vector settings of our animations, this format allows us to maintain a high quality and performance encoded animation, showing fidelity and compatibility between different devices, [read more](https://lottiefiles.com/what-is-lottie).
+A Lottie is a `JSON` file containing vector settings of our animations, this format allows us to maintain a high quality and performance encoded animation, showing fidelity and compatibility between different devices, see the [official guide](https://lottiefiles.com/what-is-lottie).
 
-[View example lottie file ->](https://assets5.lottiefiles.com/packages/lf20_rbtawnwz.json)
+[View Lottie file example ->](https://assets5.lottiefiles.com/packages/lf20_rbtawnwz.json)
 
 ## Installing the lottie-web package
 
@@ -64,15 +64,17 @@ See more information about the [api](http://airbnb.io/lottie/#/web).
   <strong>Note:</strong> <code>path</code> receives the relative path of your animation, so all your animations must be inside the <code>static</code> folder, for example: <code>static/animations/{file-name}.json</code>
 </Alert>
 
-Our `loadLottie(...)` method receives 2 parameters, the first parameter is an `HTML` element that will serve as a container for our animation:
+Our `loadLottie(...)` method receives 2 parameters:
+
+- The first parameter is an `HTML` element that will serve as a container for our animation:
 
 ```html
 <div ref="animation-container"></div>
 ```
 
-The second parameter is the name of the file, just use the name without the `.json` extension.
+- The second parameter is the name of the file without the `.json` extension.
 
-To use the animation we are going to use the [mounted](https://vuejs.org/api/options-lifecycle.html#mounted) hook, this will run our animation once the page loads.
+To use the animation we are going to use the [mounted](https://vuejs.org/api/options-lifecycle.html#mounted) hook. This will run our animation once the page loads.
 
 ```js
 mounted() {
@@ -80,13 +82,13 @@ mounted() {
 }
 ```
 
-**We are set**, that's it! Now we will have as a result a beautiful animation playing on our site:
+**That's it!** Now we will have as a result a beautiful animation playing on our site:
 
 <Lottie src="78790-hello"></Lottie>
 
 ## Animation events
 
-From here on out the only limitation is your imagination, you can create different configurations and customizations thanks to the extensive [configuration api](https://airbnb.io/lottie/#/web) provided by the `lottie-web` package, you can even make use of the different events as `onComplete, onLoopComplete, onEnterFrame, onSegmentStart`, for example:
+From here on out the only limitation is your imagination. You can create different configurations and customizations thanks to the extensive [configuration api](https://airbnb.io/lottie/#/web) provided by the `lottie-web` package, and even make use of the different events as `onComplete, onLoopComplete, onEnterFrame, onSegmentStart`, for example:
 
 ```js
 animation.addEventListener('loopComplete', () => {
@@ -94,4 +96,4 @@ animation.addEventListener('loopComplete', () => {
 });
 ```
 
-This is just a small usage reference, you can exploit your imagination and feel free to [send me](mailto:hello@josueayala.me) your amazing projects using this beautiful library.
+This is just a small usage reference. Explore your imagination and feel free to [send me](mailto:hello@josueayala.me) your amazing projects using this beautiful library.
