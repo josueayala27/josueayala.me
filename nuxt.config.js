@@ -1,6 +1,7 @@
 import i18n from './config/i18n';
 import googleFonts from './config/google-fonts';
 import content from './config/content';
+import sentry from './config/sentry';
 
 export default {
   head: {
@@ -53,7 +54,7 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/i18n', '@nuxtjs/sentry'],
 
   build: {
     postcss: {
@@ -78,4 +79,5 @@ export default {
   content,
   googleFonts,
   i18n,
+  sentry,
 };
