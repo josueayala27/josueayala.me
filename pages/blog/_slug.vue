@@ -1,6 +1,5 @@
 <template>
   <div class="max-w-none">
-    <button @click="login()">Login</button>
     <section class="py-3 prose capitalize">
       <p>
         {{ $t('blog.posted') }}

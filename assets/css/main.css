@@ -1,7 +1,14 @@
 @tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-4xl font-extrabold;
+  }
+
+  pre {
+    @apply p-5;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
-
-pre {
-  @apply p-5;
-}
