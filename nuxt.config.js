@@ -17,6 +17,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@joscode' },
       {
+        name: 'google-site-verification',
+        content: 'wK8ROcCZ2gyLNzVYJNhKqg-j2kUuPqcsS31LzwsPXzY',
+      },
+      {
         hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary_large_image',
