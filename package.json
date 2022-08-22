@@ -11,15 +11,18 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.0",
-    "@nuxt/content": "^1",
+    "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.2.3",
     "@nuxtjs/sentry": "^5.1.7",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "add": "^2.0.6",
     "core-js": "^3.19.3",
     "dayjs": "^1.11.3",
     "firebase": "^9.9.1",
     "lottie-web": "^5.9.6",
     "nuxt": "^2.15.8",
+    "remove": "^0.1.5",
     "shiki": "^0.10.1",
     "v-click-outside": "^3.2.0",
     "v-sanitize": "^0.0.9",
@@ -27,7 +30,8 @@
     "vue-gtag": "^2.0.1",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@nuxt/postcss8": "^1.1.3",
