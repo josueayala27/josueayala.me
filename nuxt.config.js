@@ -36,8 +36,6 @@ export default {
     '@/plugins/filters.ts',
     '@/plugins/dayjs.ts',
     '@/plugins/v-click-outside.client.ts',
-    '@/plugins/v-sanitize.client.ts',
-    '@/plugins/firebase.client.ts',
   ],
 
   components: {
