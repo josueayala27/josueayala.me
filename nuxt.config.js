@@ -2,7 +2,6 @@ import i18n from './config/i18n';
 import googleFonts from './config/google-fonts';
 import content from './config/content';
 import sentry from './config/sentry';
-import getRoutes from './utils/get-routes';
 
 export default {
   head: {
@@ -59,13 +58,7 @@ export default {
     '@nuxtjs/google-fonts',
   ],
 
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxt/content',
-    '@nuxtjs/i18n',
-    '@nuxtjs/sentry',
-    '@nuxtjs/sitemap',
-  ],
+  modules: ['@nuxtjs/axios', '@nuxt/content', '@nuxtjs/i18n', '@nuxtjs/sentry'],
 
   build: {
     postcss: {
@@ -91,11 +84,4 @@ export default {
   googleFonts,
   i18n,
   sentry,
-
-  sitemap: {
-    hostname: process.env.BASE_URL,
-    routes() {
-      return getRoutes();
-    },
-  },
 };

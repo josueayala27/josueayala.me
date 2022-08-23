@@ -25,10 +25,17 @@
 </template>
 
 <script lang="ts">
+import sanitize from '@/utils/url';
+
 export default {
   name: 'BlogItemComponent',
   props: {
     data: { type: Object },
+  },
+  data() {
+    return {
+      sanitize,
+    };
   },
 };
 </script>
