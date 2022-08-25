@@ -2,7 +2,7 @@
   <button
     v-on="$listeners"
     :class="[...colors[color], ...sizes[size]]"
-    class="bg-black text-white rounded-lg relative">
+    class="bg-black text-white rounded-lg relative transition-all duration-300">
     <!-- Loading icon -->
     <div
       v-if="isLoading"
@@ -27,14 +27,17 @@ export default {
   name: 'ButtonComponent',
   props: {
     isLoading: { type: Boolean, default: false },
-    color: { type: String, default: 'default' },
+    color: { type: String, default: 'primary' },
     size: { type: String, default: 'medium' },
   },
   data() {
     return {
       colors: {
-        primary: ['bg-blue-500', 'text-white'],
-        default: ['bg-red-500', 'text-white'],
+        primary: [
+          'bg-pastel-green-600',
+          'hover:bg-pastel-green-700',
+          'text-white',
+        ],
       },
 
       sizes: {

@@ -38,110 +38,67 @@
 
     <Separator />
 
-    <div class="prose flex gap-3">
-      <Icon
-        @click="getURL"
-        class="cursor-pointer hover:text-[#1DA1F2] transition-all"
-        size="1.5rem"
-        category="solid"
-        name="twitter" />
-    </div>
-
     <!-- Comments  -->
-    <section class="flex flex-col gap-5" v-if="false">
+    <section class="flex flex-col gap-5">
       <div class="flex justify-between items-center">
         <div class="prose">
-          <h2>Coments ({{ comments.data.length }})</h2>
+          <h2>Coments (0)</h2>
         </div>
-
-        <Button
-          v-if="!user"
-          @click="login('google')"
-          color="primary"
-          icon-align="left">
-          <template #icon>
-            <Icon name="plus" />
-          </template>
-          Write a comment
-        </Button>
       </div>
 
-      <div class="flex flex-col gap-2" v-if="user">
-        <Input
-          type="text"
-          placeholder="Write a comment"
-          v-model="comments.model" />
+      <div class="flex flex-col gap-2">
+        <Input type="text" placeholder="Write a comment" />
         <div class="flex justify-end">
           <Button
+            @click="login"
             color="primary"
             :is-loading="loaders.comments.add"
-            icon-align="left"
-            @click="sendComment()">
+            icon-align="left">
             <template #icon>
               <Icon name="plus" />
             </template>
-            Send
+            Publish
           </Button>
         </div>
       </div>
 
-      <Comment
-        @delete="(evt) => deleteComment(evt)"
-        :data="comment"
-        v-for="(comment, i) in comments.data"
-        :key="i" />
+      <!-- <Comment @delete="(evt) => deleteComment(evt)" /> -->
     </section>
   </div>
 </template>
 
 <script>
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
 
 export default {
   name: 'SlugPage',
 
-  middleware: ['auth'],
-
   data() {
     return {
-      user: false,
       loaders: {
         comments: {
           get: false,
           delete: false,
           add: false,
         },
-        blog: {},
-      },
-
-      comments: {
-        model: '',
-        show: false,
-        data: [],
       },
     };
   },
 
   methods: {
     async login() {
-      const provider = new GoogleAuthProvider();
+      try {
+        const auth = getAuth();
 
-      const auth = getAuth();
-      const result = await signInWithPopup(auth, provider);
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
+        const result = await signInWithPopup(auth, new GithubAuthProvider());
 
-      const user = await this.$axios.$get(
-        `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${token}`
-      );
-      console.log(user);
-    },
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
 
-    getURL() {
-      window.open(
-        `https://twitter.com/share?text=${this.page.title}&url=${window.location.href}`,
-        '_blank'
-      );
+        console.log(token);
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 
