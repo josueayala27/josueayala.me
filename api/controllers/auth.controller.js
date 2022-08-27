@@ -1,5 +1,5 @@
 export const github = (req, res) => {
-  res.status(200).json({
+  res.send({
     message: 'Hello from github',
     ...req.body,
   });

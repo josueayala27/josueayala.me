@@ -1,12 +1,18 @@
-const validate = (schema) => async (req, res, next) => {
-  try {
-    await schema.validateAsync(req.body);
-    next();
-  } catch (error) {
-    res.status(500).json({
-      error,
-    });
+import httpstatus from 'http-status';
+import BaseError from '../utils/apiError';
+
+const validate = (schema) => (req, res, next) => {
+  const { error } = schema.validate(req.body);
+
+  if (error) {
+    const errorMessage = error.details
+      .map((details) => details.message)
+      .join(', ');
+
+    return next(new BaseError(httpstatus.BAD_REQUEST, errorMessage));
   }
+
+  return next();
 };
 
 export default validate;
