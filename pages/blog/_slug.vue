@@ -86,6 +86,10 @@ export default {
     };
   },
 
+  created() {
+    this.getComments();
+  },
+
   methods: {
     async login() {
       try {
@@ -95,15 +99,22 @@ export default {
         const { accessToken: token } =
           GithubAuthProvider.credentialFromResult(result);
 
-        const response = await this.$axios.$post('/api/auth/github', {
+        await this.$axios.$post('api/auth/github', {
           token,
         });
-
-        console.log(response);
       } catch (error) {
         console.error(error);
       } finally {
         this.loaders.login = false;
+      }
+    },
+    async getComments() {
+      try {
+        console.log('Take a while getting comments');
+        const comments = await this.$axios.$get('api/comments');
+        console.log(comments);
+      } catch (error) {
+        console.error(error);
       }
     },
   },
