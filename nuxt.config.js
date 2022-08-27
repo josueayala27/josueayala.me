@@ -2,7 +2,7 @@ import i18n from './config/i18n';
 import googleFonts from './config/google-fonts';
 import content from './config/content';
 import sentry from './config/sentry';
-import getRoutes from './utils/get-routes';
+import sitemap from './config/sitemap';
 
 export default {
   head: {
@@ -85,15 +85,11 @@ export default {
     BASE_URL: process.env.BASE_URL,
   },
 
+  serverMiddleware: [{ path: '/api', handler: '@/api/app.js' }],
+
   content,
   googleFonts,
   i18n,
   sentry,
-
-  sitemap: {
-    hostname: process.env.BASE_URL,
-    routes() {
-      return getRoutes();
-    },
-  },
+  sitemap,
 };

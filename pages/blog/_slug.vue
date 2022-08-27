@@ -50,9 +50,9 @@
         <Input type="text" placeholder="Write a comment" />
         <div class="flex justify-end">
           <Button
+            :is-loading="loaders.login"
             @click="login"
             color="primary"
-            :is-loading="loaders.comments.add"
             icon-align="left">
             <template #icon>
               <Icon name="plus" />
@@ -76,6 +76,7 @@ export default {
   data() {
     return {
       loaders: {
+        login: false,
         comments: {
           get: false,
           delete: false,
@@ -88,16 +89,21 @@ export default {
   methods: {
     async login() {
       try {
+        this.loaders.login = true;
         const auth = getAuth();
-
         const result = await signInWithPopup(auth, new GithubAuthProvider());
+        const { accessToken: token } =
+          GithubAuthProvider.credentialFromResult(result);
 
-        const credential = GithubAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
+        const response = await this.$axios.$post('/api/auth/github', {
+          token,
+        });
 
-        console.log(token);
+        console.log(response);
       } catch (error) {
         console.error(error);
+      } finally {
+        this.loaders.login = false;
       }
     },
   },
