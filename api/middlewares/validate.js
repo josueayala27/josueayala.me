@@ -1,7 +1,6 @@
 const validate = (schema) => async (req, res, next) => {
   try {
-    const hello = await schema.validateAsync(req.body);
-    console.log(hello);
+    await schema.validateAsync(req.body);
     next();
   } catch (error) {
     res.status(500).json({
