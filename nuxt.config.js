@@ -60,8 +60,8 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxt/content',
-    '@nuxtjs/i18n',
     '@nuxtjs/sentry',
+    '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
   ],
 
