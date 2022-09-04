@@ -1,35 +1,28 @@
 ---
 uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
 #title: Dynamic CSS variables using binding with vue 3
-title: Variables CSS dinámicas usando binding con vue 3
+title: Variables CSS dinámicas usando v-bind en vue 3
 description: Blog post description
 allowComents: false
 isPublished: true
 ---
 
-## Binding en vue.js
+## Binding en `vue.js`
 
-Primeramente vamos a destacar que no es un concepto nuevo para `vue 3`, el concepto se viene trabajando con anterioridad
+Primeramente vamos a destacar que el concepto `binding` no es nuevo para `vue 3`, sin embargo se vuelve un tema un poco dificil de entender
 
-## Actualizaciones SFC (Componente de archivo único)
+## `v-bind` dentro de nuestro CSS
 
-`Vue 3` nos ha venido sorprendiendo cada vez más, a pesar de su gran espera para sus primeros releases hemos visto que el equipo de vue sin duda alguna ha estado trabajando arduamente para traernos caracteristicas nuevas.
+`Vue 3` ha venido sorprendiendo cada vez más, a pesar de la gran espera para sus primeras [liberaciones](https://github.com/vuejs/core/releases) hemos visto que el equipo de `vue` sin duda alguna ha estado trabajando arduamente para traernos caracteristicas sorprendentes.
+
+Así es, ahora podemos ocupar la función `v-bind()` dentro de nuestro CSS.
 
 ```vue
-<template>
-  <div class="circle" />
-</template>
-
-<script setup>
-const color = '#FF5733';
-</script>
-
-<style scoped>
+<style>
 .circle {
-  height: 10rem;
-  width: 10rem;
-  border-radius: 100%;
-  color: v-bind(color);
+  color: v-bind(variable);
 }
 </style>
 ```
+
+Cabe destacar que estas nuevas funcionalidades solo pueden estar presentes dentro de nuestro componente de un solo archivo, en pocas palabras dentro de nuestro archivo  `.vue`.
