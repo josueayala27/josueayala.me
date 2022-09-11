@@ -16,13 +16,13 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
+    "jsx": "preserve",
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
       "@types/node",
       "@nuxt/content",
       "@nuxtjs/i18n",
-      "nuxt-supabase",
       "types/v-click-outside.d.ts",
       "@nuxtjs/sentry"
     ]
