@@ -14,7 +14,7 @@ export default {
   async asyncData({ $content, app }) {
     const posts = await $content(app.i18n.locale)
       .limit(5)
-      .sortBy('date', 'asc')
+      .sortBy('date', 'desc')
       .where({ isPublished: true })
       .only(['description', 'title', 'slug'])
       .fetch();
