@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../config/db';
+import database from '../config/db';
 
-const Comment = sequelize.define(
+const Comment = database.define(
   'comment',
   {
     content: {

@@ -108,6 +108,7 @@ export default {
         this.loaders.login = false;
       }
     },
+
     async getComments() {
       try {
         console.log('Take a while getting comments');
