@@ -24,6 +24,7 @@
       "@nuxt/content",
       "@nuxtjs/i18n",
       "types/v-click-outside.d.ts",
+      "types/joscode.d.ts",
       "@nuxtjs/sentry"
     ]
   },

@@ -1477,6 +1477,33 @@
     js-yaml "^3.13.1"
     json5 "^2.1.1"
 
+"@joscode/ui@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@joscode/ui/-/ui-0.0.15.tgz#d5a651238c58b70907d6d778459055c290240c20"
+  integrity sha512-JEWZNOPKQsqhc0GqUYK8RJv6f6vji13U0ijxD+I5YfUQoU3Dl1zlb1uuCBC4hwYWKBlDwZ+zwQc4DTOepQNmNg==
+  dependencies:
+    "@joscode/ui" "^0.0.5"
+    core-js "^3.8.3"
+    vue "^2.6.14"
+
+"@joscode/ui@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@joscode/ui/-/ui-0.0.24.tgz#f861110fc22c1d0dd3b810c85f1f606e7759e505"
+  integrity sha512-wEAp7E+n3QtZvQvgG+yjwdYMcCMxT6+Gy5n2kXd8FqHVyAT2ckEP5Pr7AYbHdDjuslHLHthZU4b4EEWXUs7XTg==
+  dependencies:
+    "@joscode/ui" "^0.0.15"
+    core-js "^3.8.3"
+    vue "^2.6.14"
+
+"@joscode/ui@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@joscode/ui/-/ui-0.0.5.tgz#bb465706d8f151bb399dfa8c4133c819176239a0"
+  integrity sha512-yfT0T5nu9K1VP4PFcj2RDfujvyR867VIyDv5kwxXEru9w90HLCcEPPb1xT024Rf/vmXmb+fPDt36OG0Bon5ehg==
+  dependencies:
+    "@joscode/ui" "^0.0.5"
+    core-js "^3.8.3"
+    vue "^2.6.14"
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"
@@ -4248,6 +4275,11 @@ core-js@^3.19.3:
   version "3.23.3"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.23.3.tgz#3b977612b15da6da0c9cc4aec487e8d24f371112"
   integrity sha512-oAKwkj9xcWNBAvGbT//WiCdOMpb9XQG92/Fe3ABFM/R16BsHgePG00mFOgKf7IsCtfj8tA1kHtf/VwErhriz5Q==
+
+core-js@^3.8.3:
+  version "3.25.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.1.tgz#5818e09de0db8956e16bf10e2a7141e931b7c69c"
+  integrity sha512-sr0FY4lnO1hkQ4gLDr24K0DGnweGO1QwSj5BpfQjpSJPdqWalja4cTps29Y/PJVG/P7FYlPDkH3hO+Tr0CvDgQ==
 
 core-util-is@~1.0.0:
   version "1.0.3"

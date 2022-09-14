@@ -29,12 +29,13 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  css: ['@/assets/css/main.css'],
+  css: ['@/assets/css/main.css', '@joscode/ui/dist/components-lib.css'],
 
   plugins: [
     '@/plugins/firebase.client.ts',
     '@/plugins/filters.ts',
     '@/plugins/dayjs.ts',
+    '@/plugins/joscode.ts',
     '@/plugins/v-click-outside.client.ts',
   ],
 
