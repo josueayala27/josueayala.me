@@ -1,9 +1,7 @@
 <template>
-  <div class="max-w-[42rem] mx-auto px-6 dark:bg-black dark:text-white">
-    <header>
-      <Navigation />
-    </header>
-    <main class="py-4 w-full">
+  <div class="max-w-[42rem] mx-auto flex flex-col min-h-[100vh]">
+    <Navigation />
+    <main class="h-full flex-1 relative">
       <Nuxt />
     </main>
   </div>
