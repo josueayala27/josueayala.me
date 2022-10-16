@@ -1,15 +1,19 @@
 <template>
-  <nav class="border-b py-4 flex justify-between">
-    <div
-      @click="
-        $router.push({
-          name: `index___${$i18n.locale}`,
-        })
-      "
-      class="cursor-pointer inline-flex"
-      v-html="require('@/assets/svg/general/logo-joscode.svg?raw')"></div>
-    <div></div>
-  </nav>
+  <header>
+    <nav class="border-b py-4 flex justify-between">
+      <div
+        @click="
+          $router.push({
+            name: `index___${$i18n.locale}`,
+          })
+        "
+        class="cursor-pointer inline-flex"
+        v-html="require('@/assets/svg/general/logo-joscode.svg?raw')"></div>
+      <div>
+        <!-- <router-link to="/snippets">Snippets</router-link> -->
+      </div>
+    </nav>
+  </header>
 </template>
 
 <script>
