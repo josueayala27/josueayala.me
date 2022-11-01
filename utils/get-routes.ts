@@ -2,8 +2,9 @@ const parseURL = (URL: string) => {
   const url = URL.split('/');
   const PREFIX = 'blog';
 
-  if (url[1] === 'en') return `${PREFIX}/${url[2]}`;
-  return `/${url[1]}/${PREFIX}/${url[2]}`;
+  // if (url[1] === 'en') return `${PREFIX}/${url[2]}`;
+  // return `/${url[1]}/${PREFIX}/${url[2]}`;
+  return `${PREFIX}/${url[2]}`;
 };
 
 export default async () => {

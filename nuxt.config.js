@@ -67,7 +67,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxt/content',
     '@nuxtjs/sentry',
-    '@nuxtjs/i18n',
+    // '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
   ],
 
