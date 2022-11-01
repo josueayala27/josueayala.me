@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-[42rem] mx-auto flex flex-col min-h-[100vh]">
+  <div class="max-w-[42rem] mx-auto flex flex-col min-h-[100vh] p-4">
     <Navigation />
     <main class="h-full flex-1 relative">
       <Nuxt />
