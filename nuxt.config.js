@@ -29,6 +29,12 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  render: {
+    bundleRenderer: {
+      shouldPreload: (_, type) => ['script', 'style', 'font'].includes(type),
+    },
+  },
+
   css: ['@/assets/css/main.css'],
 
   plugins: [
