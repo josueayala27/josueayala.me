@@ -5,4 +5,9 @@ export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId
 export { injectHead, useHead, useSeoMeta, useHeadSafe, useServerHead, useServerSeoMeta, useServerHeadSafe } from '@unhead/vue';
 export { default as getRoutes } from '../utils/get-routes';
 export { default as url } from '../utils/url';
+export { queryContent } from '../node_modules/@nuxt/content/dist/runtime/composables/query';
+export { useContentHelpers } from '../node_modules/@nuxt/content/dist/runtime/composables/helpers';
+export { useContentHead } from '../node_modules/@nuxt/content/dist/runtime/composables/head';
+export { withContentBase, useUnwrap, useContentDisabled as useContentState, useContentDisabled as useContent } from '../node_modules/@nuxt/content/dist/runtime/composables/utils';
+export { fetchContentNavigation } from '../node_modules/@nuxt/content/dist/runtime/composables/navigation';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

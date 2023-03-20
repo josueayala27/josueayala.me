@@ -3,21 +3,21 @@
 </template>
 
 <script>
-import lottie from 'lottie-web';
+import lottie from "lottie-web";
 
 export default {
-  name: 'LottieComponent',
+  name: "LottieComponent",
   props: {
-    src: { type: String, default: '' },
+    src: { type: String, default: "" },
   },
   mounted() {
-    this.loadLottie('lottie-container', this.src);
+    this.loadLottie("lottie-container", this.src);
   },
   methods: {
     loadLottie(reference, file) {
       const animation = lottie.loadAnimation({
         container: this.$refs[reference],
-        renderer: 'svg',
+        renderer: "svg",
         loop: true,
         autoplay: true,
         path: `${window.location.origin}/animations/${file}.json`,

@@ -2,26 +2,21 @@
   <div
     v-bind="{ ...$attrs }"
     class="cursor-pointer group"
-    @click="
-      $router.push({
-        name: `blog-slug___${$i18n.locale}`,
-        params: { slug: data.slug },
-      })
-    "
+    @click="router.push(`/blog${slug}`)"
   >
     <div class="py-3" />
     <h1 class="group-hover:text-pastel-green-600 transition-all duration-300">
-      {{ data.title }}
+      {{ title }}
     </h1>
     <p>
-      {{ data.description }}
+      {{ description }}
     </p>
     <div class="flex items-center gap-1">
-      <span class="font-semibold">{{ $t('home.read-more') }}</span>
-      <icon
+      <span class="font-semibold">Read more</span>
+      <!-- <icon
         class="opacity-0 text-pastel-green-600 group-hover:translate-x-1 group-hover:opacity-100 transition-all duration-300"
         name="chevron-double-right"
-      />
+      /> -->
     </div>
   </div>
 </template>
@@ -29,8 +24,15 @@
 <script lang="ts">
 export default {
   name: "BlogItemComponent",
-  props: {
-    data: { type: Object, required: true },
-  },
 };
+</script>
+
+<script setup lang="ts">
+const router = useRouter();
+
+defineProps<{
+  description: string;
+  title: string;
+  slug: string;
+}>();
 </script>

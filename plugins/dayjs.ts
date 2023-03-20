@@ -1,13 +1,16 @@
-import dayjs, { extend } from "dayjs";
+import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 
-import("dayjs/locale/es");
 import("dayjs/locale/en");
 
-extend(relativeTime);
-extend(advancedFormat);
+dayjs.extend(relativeTime);
+dayjs.extend(advancedFormat);
 
-export default (_: any, inject: any) => {
-  inject("dayjs", dayjs);
-};
+export default defineNuxtPlugin(() => {
+  return {
+    provide: {
+      dayjs,
+    },
+  };
+});

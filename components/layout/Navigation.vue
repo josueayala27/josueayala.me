@@ -2,27 +2,22 @@
   <header>
     <nav class="border-b py-4 flex justify-between">
       <div
-        @click="
-          $router.push({
-            name: `index___${$i18n.locale}`,
-          })
-        "
         class="cursor-pointer inline-flex"
-        v-html="require('@/assets/svg/general/logo-joscode.svg?raw')"></div>
-      <div>
-        <!-- <router-link to="/snippets">Snippets</router-link> -->
-      </div>
+        @click="router.push('/')"
+        v-html="brandLogo"
+      />
     </nav>
   </header>
 </template>
 
-<script>
+<script lang="ts">
+import brandLogo from "@/assets/svg/general/logo-joscode.svg?raw";
+
 export default {
-  name: 'NavigationComponent',
-  methods: {
-    changeTheme() {
-      localStorage.setItem('theme', 'dark');
-    },
-  },
+  name: "NavigationComponent",
 };
+</script>
+
+<script lang="ts" setup>
+const router = useRouter();
 </script>
