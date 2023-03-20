@@ -61,7 +61,7 @@ Let's review some important points:
 See more information about the [api](http://airbnb.io/lottie/#/web).
 
 ::Alert
-<strong>Note:</strong> <code>path</code> receives the relative path of your animation, so all your animations must be inside the <code>static</code> folder, for example: <code>static/animations/{file-name}.json</code>
+**Note:** `path` receives the relative path of your animation, so all your animations must be inside the `static` folder, for example: `static/animations/{file-name}.json`
 ::
 <!-- <Alert type="warning">
   <strong>Note:</strong> <code>path</code> receives the relative path of your animation, so all your animations must be inside the <code>static</code> folder, for example: <code>static/animations/{file-name}.json</code>
@@ -87,7 +87,7 @@ mounted() {
 
 **That's it!** Now we will have as a result a beautiful animation playing on our site:
 
-::Lottie{src="78790-hello"}
+:Lottie{src="78790-hello"}
 
 ## Animation events
 

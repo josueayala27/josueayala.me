@@ -1,53 +1,40 @@
 <template>
   <div class="max-w-none">
-    <section class="py-3 prose capitalize">
-      <p>
-        <!-- {{ $t('blog.posted') }} -->
-        <!-- {{ $dayjs(page.createdAt).locale($i18n.locale).format("MM MMMM YYYY") }} -->
-      </p>
-    </section>
+    <ContentDoc v-slot="{ doc }" :path="route.params.slug + ''">
+      <!-- Header -->
+      <section class="py-5 flex flex-col gap-2">
+        <h1>
+          {{ doc.title }}
+        </h1>
+        <p>
+          {{ doc.description }}
+        </p>
+      </section>
 
-    <!-- Header -->
-    <section>
-      <h1>
-        Title
-        <!-- {{ page.title }} -->
-      </h1>
-      <p>
-        <!-- {{ page.description }} -->
-        Description
-      </p>
-    </section>
+      <UiSeparator />
 
-    <UiSeparator />
-    <ContentDoc :path="route.params.slug + ''" />
+      <!-- Table of content -->
+      <section
+        class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline"
+      >
+        <ul>
+          <li
+            v-for="(link, i) in doc.body.toc.links"
+            :key="i"
+            class="cursor-pointer font-medium"
+          >
+            <nuxt-link :to="`#${link.id}`">{{ link.text }}</nuxt-link>
+          </li>
+        </ul>
+      </section>
 
-    <!-- Table of content -->
+      <UiSeparator />
 
-    <!-- <section
-      class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline"
-    >
-      <h2>{{ $t("blog.on-this-page") }}</h2>
-      <ul>
-        <li
-          v-for="(link, i) in page.toc"
-          :key="i"
-          class="cursor-pointer font-medium"
-        >
-          <nuxt-link :to="`#${link.id}`">{{ link.text }}</nuxt-link>
-        </li>
-      </ul>
-    </section> -->
+      <!-- Content  -->
+      <ContentRenderer class="flex flex-col gap-4" :value="doc" />
 
-    <UiSeparator />
-
-    <!-- Content  -->
-    <!-- <nuxt-content
-      class="prose prose-code:before:content-none prose-code:after:content-none hover:prose-a:text-pastel-green-600 prose-a:no-underline dark:prose-invert"
-      :document="page"
-    /> -->
-
-    <UiSeparator />
+      <UiSeparator />
+    </ContentDoc>
   </div>
 </template>
 

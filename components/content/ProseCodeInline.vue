@@ -1,6 +1,5 @@
 <template>
-  <span class="bg-red-500">
-    joscode
+  <code class="bg-gray-100 px-2 rounded-lg">
     <slot />
-  </span>
+  </code>
 </template>

@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <ContentList v-slot="{ list }" :query="query">
-      <BlogItem
-        v-for="(post, index) in list"
-        :id="`blog-post-${index + 1}`"
-        :key="index"
-        :slug="post._path"
-        :title="post.title"
-        :description="post.description"
-      />
-    </ContentList>
-  </div>
+  <ContentList v-slot="{ list }" :query="query">
+    <BlogItem
+      v-for="(post, index) in list"
+      :id="`blog-post-${index + 1}`"
+      :key="index"
+      :slug="post._path"
+      :title="post.title"
+      :description="post.description"
+    />
+  </ContentList>
 </template>
 
 <script setup lang="ts">

@@ -1,10 +1,9 @@
 <template>
   <div
     v-bind="{ ...$attrs }"
-    class="cursor-pointer group"
+    class="cursor-pointer group py-5 flex flex-col gap-2"
     @click="router.push(`/blog${slug}`)"
   >
-    <div class="py-3" />
     <h1
       class="group-hover:text-pastel-green-600 transition-all duration-300 text-black"
     >
@@ -14,11 +13,11 @@
       {{ description }}
     </p>
     <div class="flex items-center gap-1">
-      <span class="font-semibold">Read more</span>
-      <!-- <icon
+      <p class="font-semibold">Read more</p>
+      <Icon
         class="opacity-0 text-pastel-green-600 group-hover:translate-x-1 group-hover:opacity-100 transition-all duration-300"
-        name="chevron-double-right"
-      /> -->
+        name="uil:angle-right-b"
+      />
     </div>
   </div>
 </template>
