@@ -14,9 +14,15 @@
 <script>
 export default {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   name: 'IndexPage',
   async asyncData({ $content, app }) {
     const posts = await $content(app.i18n.locale)
+=======
+  name: "IndexPage",
+  async asyncData({ $content }) {
+    const posts = await $content("en")
+>>>>>>> Stashed changes
 =======
   name: "IndexPage",
   async asyncData({ $content }) {
