@@ -5,7 +5,9 @@
     @click="router.push(`/blog${slug}`)"
   >
     <div class="py-3" />
-    <h1 class="group-hover:text-pastel-green-600 transition-all duration-300">
+    <h1
+      class="group-hover:text-pastel-green-600 transition-all duration-300 text-black"
+    >
       {{ title }}
     </h1>
     <p>
