@@ -6,10 +6,10 @@
 
 <script lang="ts">
 export default {
-  name: 'SeparatorComponent' as string,
+  name: "SeparatorComponent" as string,
   props: {
-    width: { default: '100%', type: String },
-    classes: { type: Array, default: () => ['py-[20px]'] },
+    width: { default: "100%", type: String },
+    classes: { type: Array, default: () => ["py-[20px]"] },
   },
 };
 </script>

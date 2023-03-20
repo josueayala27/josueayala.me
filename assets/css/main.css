@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-pre {
-  @apply p-5;
+h1 {
+  @apply text-[2.25em] font-extrabold;
+}
+
+h2 {
+  @apply text-[1.5em] font-bold;
 }

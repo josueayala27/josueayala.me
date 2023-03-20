@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'CaptionComponent',
+  name: "CaptionComponent",
 };
 </script>

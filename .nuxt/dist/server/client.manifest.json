@@ -1,0 +1,15 @@
+{
+  "@vite/client": {
+    "isEntry": true,
+    "file": "@vite/client",
+    "css": [],
+    "module": true,
+    "resourceType": "script"
+  },
+  "/Users/josueayala/Desktop/code/personal/nuxt/jos.code/node_modules/nuxt/dist/app/entry.js": {
+    "resourceType": "script",
+    "module": true,
+    "isEntry": true,
+    "file": "/Users/josueayala/Desktop/code/personal/nuxt/jos.code/node_modules/nuxt/dist/app/entry.js"
+  }
+}

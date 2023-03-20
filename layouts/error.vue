@@ -6,7 +6,8 @@
     <p>{{ error.message }}</p>
     <router-link
       class="mt-2 font-semibold hover:text-pastel-green-600 transition-all"
-      to="/">
+      to="/"
+    >
       Go to home
     </router-link>
   </div>
@@ -14,7 +15,7 @@
 
 <script>
 export default {
-  name: 'ErrorLayout',
-  props: ['error'],
+  name: "ErrorLayout",
+  props: ["error"],
 };
 </script>

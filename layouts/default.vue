@@ -1,14 +1,14 @@
 <template>
   <div class="max-w-[42rem] mx-auto flex flex-col min-h-[100vh] p-4">
-    <Navigation />
+    <LayoutNavigation />
     <main class="h-full flex-1 relative">
-      <Nuxt />
+      <slot />
     </main>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DefaultComponent',
+  name: "DefaultComponent",
 };
 </script>
