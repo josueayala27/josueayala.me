@@ -8,7 +8,7 @@
     </section>
 
     <!-- Header -->
-    <section class="prose">
+    <section>
       <h1>
         Title
         <!-- {{ page.title }} -->
@@ -19,9 +19,11 @@
       </p>
     </section>
 
-    <Separator />
+    <UiSeparator />
+    <ContentDoc :path="route.params.slug + ''" />
 
     <!-- Table of content -->
+
     <!-- <section
       class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline"
     >
@@ -37,7 +39,7 @@
       </ul>
     </section> -->
 
-    <Separator />
+    <UiSeparator />
 
     <!-- Content  -->
     <!-- <nuxt-content
@@ -45,11 +47,11 @@
       :document="page"
     /> -->
 
-    <Separator />
+    <UiSeparator />
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "SlugPage",
   // async asyncData({ $content, params, app }) {
@@ -57,4 +59,12 @@ export default {
   //   return { page };
   // },
 };
+</script>
+
+<script lang="ts" setup>
+const route = useRoute();
+
+// const { data } = await useAsyncData("home", () =>
+//   queryContent("/" + route.params.slug).
+// );
 </script>

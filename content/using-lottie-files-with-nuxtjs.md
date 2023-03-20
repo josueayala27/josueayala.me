@@ -84,7 +84,7 @@ mounted() {
 
 **That's it!** Now we will have as a result a beautiful animation playing on our site:
 
-<Lottie src="78790-hello"></Lottie>
+::Lottie{src="78790-hello"}
 
 ## Animation events
 

@@ -1,24 +1,31 @@
 <template>
-  <div
-    class="prose prose-a:no-underline prose-slate dark:prose-invert max-w-none"
-  >
-    <BlogItem
-      v-for="(post, index) in data"
-      :id="`blog-post-${index + 1}`"
-      :key="index"
-      :slug="post._path"
-      :title="post.title"
-      :description="post.description"
-    />
+  <div>
+    <ContentList v-slot="{ list }" :query="query">
+      <BlogItem
+        v-for="(post, index) in list"
+        :id="`blog-post-${index + 1}`"
+        :key="index"
+        :slug="post._path"
+        :title="post.title"
+        :description="post.description"
+      />
+    </ContentList>
   </div>
 </template>
 
 <script setup lang="ts">
-const { data } = await useAsyncData("home", () =>
-  queryContent("/")
-    .limit(5)
-    .where({ isPublished: true })
-    .only(["description", "title", "_path"])
-    .find()
-);
+import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
+const query: QueryBuilderParams = {
+  path: "/",
+  where: [{ isPublished: true }],
+  limit: 5,
+  only: ["description", "title", "_path"],
+};
+// const { data } = await useAsyncData("home", () =>
+//   queryContent("/")
+//     .limit(5)
+//     .where({ isPublished: true })
+//     .only(["description", "title", "_path"])
+//     .find()
+// );
 </script>
