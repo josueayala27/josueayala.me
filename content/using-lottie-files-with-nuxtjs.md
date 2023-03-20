@@ -60,9 +60,12 @@ Let's review some important points:
 
 See more information about the [api](http://airbnb.io/lottie/#/web).
 
-<Alert type="warning">
+::Alert
+<strong>Note:</strong> <code>path</code> receives the relative path of your animation, so all your animations must be inside the <code>static</code> folder, for example: <code>static/animations/{file-name}.json</code>
+::
+<!-- <Alert type="warning">
   <strong>Note:</strong> <code>path</code> receives the relative path of your animation, so all your animations must be inside the <code>static</code> folder, for example: <code>static/animations/{file-name}.json</code>
-</Alert>
+</Alert> -->
 
 Our `loadLottie(...)` method receives 2 parameters:
 
