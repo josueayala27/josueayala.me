@@ -9,6 +9,6 @@
 
 <script>
 export default {
-  name: 'DefaultComponent',
+  name: "DefaultComponent",
 };
 </script>

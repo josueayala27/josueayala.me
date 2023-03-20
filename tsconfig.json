@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "compilerOptions": {
     "target": "ES2018",
     "module": "ESNext",
@@ -28,4 +29,8 @@
     ]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
+=======
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json"
+>>>>>>> Stashed changes
 }
