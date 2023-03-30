@@ -1,6 +1,17 @@
 import svgLoader from "vite-svg-loader";
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      script: [
+        {
+          async: true,
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5295326290228563",
+          crossorigin: "anonymous",
+        },
+      ],
+    },
+  },
   css: ["@/assets/css/main.css"],
   modules: [
     "@nuxt/content",
