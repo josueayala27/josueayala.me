@@ -1,6 +1,6 @@
 ---
 uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
-title: Using Lottie files with nuxt.js
+title: Using Lottie files with Nuxt 2
 description: Many times using animations on our website is not an easy job, so in this blog we are going to learn how to use Lottie animations within our project with nuxt.js easily.
 allowComents: false
 isPublished: true
@@ -34,7 +34,7 @@ import lottie from 'lottie-web';
 
 Now we have the `lottie` reference which can be used anywhere in the code, for that we are going to create a method that will allow us to generate an instance of our animation:
 
-```js
+```js allow-copy=true;meta=example
 loadLottie(reference, file) {
   // Lottie config instance
   const animation = lottie.loadAnimation({
@@ -63,9 +63,6 @@ See more information about the [api](http://airbnb.io/lottie/#/web).
 ::Alert
 **Note:** `path` receives the relative path of your animation, so all your animations must be inside the `static` folder, for example: `static/animations/{file-name}.json`
 ::
-<!-- <Alert type="warning">
-  <strong>Note:</strong> <code>path</code> receives the relative path of your animation, so all your animations must be inside the <code>static</code> folder, for example: <code>static/animations/{file-name}.json</code>
-</Alert> -->
 
 Our `loadLottie(...)` method receives 2 parameters:
 
