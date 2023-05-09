@@ -9,3 +9,7 @@ h1 {
 h2 {
   @apply text-[1.5em] font-bold;
 }
+
+.line:empty {
+  @apply h-6;
+}

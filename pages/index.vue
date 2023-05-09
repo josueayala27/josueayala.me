@@ -19,11 +19,4 @@ const query: QueryBuilderParams = {
   limit: 5,
   only: ["description", "title", "_path"],
 };
-// const { data } = await useAsyncData("home", () =>
-//   queryContent("/")
-//     .limit(5)
-//     .where({ isPublished: true })
-//     .only(["description", "title", "_path"])
-//     .find()
-// );
 </script>

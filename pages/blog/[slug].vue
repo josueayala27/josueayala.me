@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-none">
-    <ContentDoc v-slot="{ doc }" :path="route.params.slug + ''">
+    <ContentDoc v-slot="{ doc }" :path="`${route.params.slug}`">
       <!-- Header -->
       <section class="py-5 flex flex-col gap-2">
         <h1>
@@ -33,7 +33,7 @@
       <!-- Content  -->
       <ContentRenderer class="flex flex-col gap-4" :value="doc" />
 
-      <UiSeparator />
+      <!-- <UiSeparator /> -->
     </ContentDoc>
   </div>
 </template>
@@ -41,17 +41,9 @@
 <script lang="ts">
 export default {
   name: "SlugPage",
-  // async asyncData({ $content, params, app }) {
-  //   const page = await $content(app.i18n.locale, params.slug).fetch();
-  //   return { page };
-  // },
 };
 </script>
 
 <script lang="ts" setup>
 const route = useRoute();
-
-// const { data } = await useAsyncData("home", () =>
-//   queryContent("/" + route.params.slug).
-// );
 </script>

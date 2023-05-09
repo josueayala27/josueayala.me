@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     },
   },
   googleFonts: {
-    overwriting: false,
+    overwriting: true,
     display: "swap",
     prefetch: false,
     preconnect: false,
