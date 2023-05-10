@@ -1,30 +1,27 @@
 <template>
-  <div ref="lottie-container" class="rounded-lg border h-[30vh]"></div>
+  <div ref="lottieContainer" class="rounded-lg border h-[30vh]"></div>
 </template>
 
-<script>
+<script lang="ts" setup>
 import lottie from "lottie-web";
 
-export default {
-  name: "LottieComponent",
-  props: {
-    src: { type: String, default: "" },
-  },
-  mounted() {
-    this.loadLottie("lottie-container", this.src);
-  },
-  methods: {
-    loadLottie(reference, file) {
-      const animation = lottie.loadAnimation({
-        container: this.$refs[reference],
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: `${window.location.origin}/animations/${file}.json`,
-      });
+const props = defineProps<{ src: string }>();
 
-      animation.play();
-    },
-  },
+const lottieContainer = ref();
+
+const loadLottie = (src: string) => {
+  const animation = lottie.loadAnimation({
+    container: lottieContainer.value,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: `${window.location.origin}/animations/${src}.json`,
+  });
+
+  animation.play();
 };
+
+onMounted(() => {
+  loadLottie(props.src);
+});
 </script>
