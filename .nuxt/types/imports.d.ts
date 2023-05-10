@@ -21,7 +21,6 @@ declare global {
   const fetchContentNavigation: typeof import('../../node_modules/@nuxt/content/dist/runtime/composables/navigation')['fetchContentNavigation']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
-  const getRoutes: typeof import('../../utils/get-routes')['default']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
   const injectHead: typeof import('@unhead/vue')['injectHead']
@@ -79,7 +78,6 @@ declare global {
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
   const updateAppConfig: typeof import('../../node_modules/nuxt/dist/app')['updateAppConfig']
-  const url: typeof import('../../utils/url')['default']
   const useAppConfig: typeof import('../../node_modules/nuxt/dist/app')['useAppConfig']
   const useAsyncData: typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']
   const useAttrs: typeof import('vue')['useAttrs']
@@ -111,6 +109,7 @@ declare global {
   const useServerSeoMeta: typeof import('@unhead/vue')['useServerSeoMeta']
   const useSlots: typeof import('vue')['useSlots']
   const useState: typeof import('../../node_modules/nuxt/dist/app')['useState']
+  const useToast: typeof import('../../composables/useToast')['default']
   const useTransitionState: typeof import('vue')['useTransitionState']
   const useUnwrap: typeof import('../../node_modules/@nuxt/content/dist/runtime/composables/utils')['useUnwrap']
   const watch: typeof import('vue')['watch']
@@ -152,7 +151,6 @@ declare module 'vue' {
     readonly fetchContentNavigation: UnwrapRef<typeof import('../../node_modules/@nuxt/content/dist/runtime/composables/navigation')['fetchContentNavigation']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
-    readonly getRoutes: UnwrapRef<typeof import('../../utils/get-routes')['default']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly injectHead: UnwrapRef<typeof import('@unhead/vue')['injectHead']>
@@ -210,7 +208,6 @@ declare module 'vue' {
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly updateAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['updateAppConfig']>
-    readonly url: UnwrapRef<typeof import('../../utils/url')['default']>
     readonly useAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useAppConfig']>
     readonly useAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
@@ -242,6 +239,7 @@ declare module 'vue' {
     readonly useServerSeoMeta: UnwrapRef<typeof import('@unhead/vue')['useServerSeoMeta']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useState']>
+    readonly useToast: UnwrapRef<typeof import('../../composables/useToast')['default']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
     readonly useUnwrap: UnwrapRef<typeof import('../../node_modules/@nuxt/content/dist/runtime/composables/utils')['useUnwrap']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>

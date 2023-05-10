@@ -1,4 +1,4 @@
-import { Seo } from '@/models/seo';
+import { Seo } from "@/models/seo";
 
 const seo = ({
   page,
@@ -10,43 +10,43 @@ const seo = ({
   $i18n: { locale: string };
 }): Seo[] => [
   {
-    hid: 'description',
-    name: 'description',
+    hid: "description",
+    name: "description",
     content: page.description,
   },
   {
-    hid: 'og:description',
-    name: 'og:description',
+    hid: "og:description",
+    name: "og:description",
     content: page.description,
   },
   {
-    hid: 'twitter:description',
-    name: 'twitter:description',
+    hid: "twitter:description",
+    name: "twitter:description",
     content: page.description,
   },
   {
-    hid: 'og:title',
-    name: 'og:title',
+    hid: "og:title",
+    name: "og:title",
     content: page.title,
   },
   {
-    hid: 'og:image',
-    name: 'og:image',
+    hid: "og:image",
+    name: "og:image",
     content: `${$config.BASE_URL}/og/${$i18n.locale}/${page.slug}.png`,
   },
   {
-    hid: 'og:url',
-    name: 'og:url',
+    hid: "og:url",
+    name: "og:url",
     content: `${$config.BASE_URL}/blog/${page.slug}`,
   },
   {
-    hid: 'twitter:title',
-    name: 'twitter:title',
+    hid: "twitter:title",
+    name: "twitter:title",
     content: page.title,
   },
   {
-    hid: 'twitter:image',
-    name: 'twitter:image',
+    hid: "twitter:image",
+    name: "twitter:image",
     content: `${$config.BASE_URL}/og/${$i18n.locale}/${page.slug}.png`,
   },
 ];
