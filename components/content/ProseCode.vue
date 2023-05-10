@@ -1,11 +1,10 @@
 <template>
-  <div class="p-3 bg-[#282a36] rounded-lg relative group">
+  <div class="p-4 bg-[#282a36] rounded-lg relative group">
     <div
-      v-if="allowCopy"
-      class="absolute opacity-0 group-hover:opacity-100 transition top-3 right-3 bg-white cursor-pointer rounded-lg p-2"
+      class="absolute grid place-items-center opacity-0 group-hover:opacity-100 transition top-3 right-3 hover:bg-gray-200 bg-white cursor-pointer rounded-lg p-2"
       @click="copyCode($attrs.code)"
     >
-      <Icon size="24px" name="uil:copy" />
+      <Icon class="text-[#282a36]" size="16px" name="uil:copy-alt" />
     </div>
     <slot />
   </div>
@@ -13,6 +12,7 @@
 
 <script setup>
 const attrs = useAttrs();
+const { show } = useToast();
 
 const allowCopy = ref(false);
 
@@ -31,7 +31,8 @@ if (attrs.meta) {
  */
 const copyCode = async (code) => {
   await navigator.clipboard.writeText(code);
-  console.log("Code copied successfully!");
+  // console.log("Code copied successfully!");
+  show();
 };
 </script>
 
