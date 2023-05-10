@@ -7718,6 +7718,11 @@ vue-bundle-renderer@^1.0.2:
   dependencies:
     ufo "^1.1.0"
 
+vue-c2c@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/vue-c2c/-/vue-c2c-0.2.1.tgz#46aa0a2871e4dba0aabf6df0b4faeb042d024334"
+  integrity sha512-rULIy2WGyezapk1H7wGFOB6U5d+200jiU9srFyjNtsfYQPSog/4a8URClp0eqGfo1a2U40bECYKfehwUTpoHvw==
+
 vue-devtools-stub@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/vue-devtools-stub/-/vue-devtools-stub-0.1.0.tgz#a65b9485edecd4273cedcb8102c739b83add2c81"

@@ -28,6 +28,7 @@
   "dependencies": {
     "dayjs": "^1.11.7",
     "lottie-web": "^5.10.2",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "vue-c2c": "^0.2.1"
   }
 }
