@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "nuxt-icon",
+    "@vueuse/motion/nuxt",
   ],
   vite: {
     plugins: [svgLoader()],

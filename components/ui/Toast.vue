@@ -1,10 +1,13 @@
 <template>
   <div
-    class="flex cursor-pointer items-center font-medium gap-3 text-sm bg-pastel-green-100 hover:bg-pastel-green-200 duration-300 py-2 px-3 rounded-full ring-[1.5px] ring-pastel-green-400"
+    class="relative overflow-hidden flex cursor-pointer items-center font-medium gap-3 text-sm bg-pastel-green-100 hover:bg-pastel-green-200 duration-300 py-2 px-3 rounded-full border-[2px] border-pastel-green-500"
     @click="closeToast"
   >
+    <div
+      class="loader absolute bottom-0 left-0 w-full h-[.2rem] bg-pastel-green-500"
+    />
     <Suspense>
-      <Icon size="24px" class="text-pastel-green-600" name="uis:check-circle" />
+      <Icon size="24px" class="text-pastel-green-500" name="uis:check-circle" />
     </Suspense>
     {{ content }}
   </div>
@@ -21,9 +24,23 @@ const closeToast = () => {
   emit("close");
 };
 
-onMounted(() => {
-  timeOut.value = setTimeout(() => {
-    emit("close");
-  }, 3000);
-});
+timeOut.value = setTimeout(() => {
+  emit("close");
+}, 3000);
 </script>
+
+<style>
+.loader {
+  animation: toast-loading 3s linear forwards;
+}
+
+@keyframes toast-loading {
+  0% {
+    @apply w-[0%];
+  }
+
+  100% {
+    @apply w-full;
+  }
+}
+</style>
