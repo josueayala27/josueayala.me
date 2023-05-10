@@ -35,9 +35,9 @@ export default function () {
     createRootElement();
   });
 
-  const show = () => {
+  const show = (content: string) => {
     const { toggle, hide } = useDialog(
-      {},
+      { content },
       {
         emits: {
           onClose: () => hide(),
