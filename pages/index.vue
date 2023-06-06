@@ -19,4 +19,6 @@ const query: QueryBuilderParams = {
   limit: 5,
   only: ["description", "title", "_path"],
 };
+
+console.log("Force build.");
 </script>
