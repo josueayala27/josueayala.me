@@ -1,9 +1,13 @@
 ---
-uuid: 5899b8f0-fa1a-403f-aaaa-dcf7bd030570
 title: Using Lottie files with Nuxt 2
 description: Many times using animations on our website is not an easy job, so in this blog we are going to learn how to use Lottie animations within our project with nuxt.js easily.
-allowComents: false
-isPublished: true
+head:
+  meta:
+    - name: 'author'
+      content: 'Josué Ayala'
+    - name: 'copyright'
+      content: '© 2022 josueayala.me'
+draft: false
 ---
 
 ## What is a Lottie?
