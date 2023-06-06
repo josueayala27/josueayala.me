@@ -29,6 +29,8 @@
     "@vueuse/motion": "^2.0.0-beta.23",
     "dayjs": "^1.11.7",
     "lottie-web": "^5.10.2",
+    "satori": "^0.10.1",
+    "satori-html": "^0.3.2",
     "tailwind-scrollbar-hide": "^1.1.7",
     "vue-c2c": "^0.2.1"
   }
