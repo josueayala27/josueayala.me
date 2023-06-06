@@ -50,7 +50,7 @@ const route = useRoute();
 useHead({
   meta: [
     {
-      name: "og:image",
+      property: "og:image",
       content:
         "https://josueayala.me/api/og?title=Using%20Lottie%20files%20with%20Nuxt%202",
     },
