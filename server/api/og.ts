@@ -1,5 +1,6 @@
 import satori, { SatoriOptions } from "satori";
 import { html } from "satori-html";
+import { Resvg } from "@resvg/resvg-js";
 
 export default defineEventHandler(async (event) => {
   const url = getRequestURL(event);
@@ -26,5 +27,11 @@ export default defineEventHandler(async (event) => {
     ],
   } as SatoriOptions);
 
-  return svg;
+  const resvg = new Resvg(svg, {
+    background: "rgba(238, 235, 230, .9)",
+  });
+
+  const pngData = resvg.render();
+
+  return pngData.asPng();
 });
