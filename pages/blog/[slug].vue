@@ -46,4 +46,15 @@ export default {
 
 <script lang="ts" setup>
 const route = useRoute();
+
+useHead({
+  meta: [
+    {
+      name: "og:image",
+      content:
+        "https://josueayala.me/api/og?title=Using Lottie files with Nuxt 2",
+    },
+  ],
+  script: [{ innerHTML: "console.log('Jacqueline te amo 💚')" }],
+});
 </script>
