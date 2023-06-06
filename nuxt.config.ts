@@ -12,7 +12,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["@/assets/css/main.css"],
   modules: [
     "@nuxt/content",
     "@nuxtjs/tailwindcss",
@@ -34,7 +33,7 @@ export default defineNuxtConfig({
     },
   },
   googleFonts: {
-    overwriting: true,
+    overwriting: false,
     display: "swap",
     prefetch: false,
     preconnect: false,
