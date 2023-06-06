@@ -52,7 +52,7 @@ useHead({
     {
       name: "og:image",
       content:
-        "https://josueayala.me/api/og?title=Using Lottie files with Nuxt 2",
+        "https://josueayala.me/api/og?title=Using%20Lottie%20files%20with%20Nuxt%202",
     },
   ],
   script: [{ innerHTML: "console.log('Jacqueline te amo 💚')" }],
