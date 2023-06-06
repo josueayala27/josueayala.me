@@ -9,12 +9,16 @@ export default defineEventHandler(async (event) => {
   const markup = html(`
     <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
       <span style="font-size: 2rem; text-align: center; padding: 1rem;">
-        ${query.title}
+        ${
+          query.title === "josueayala"
+            ? `<img style="width: 25rem;" src="${url.origin}/logo-joscode.svg" />`
+            : query.title
+        }
       </span>
     </div>
   `);
 
-  const buffer = await fetch(`${url.origin}/fonts/Inter-Bold.ttf`);
+  const fontBuffer = await fetch(`${url.origin}/fonts/Inter-Bold.ttf`);
 
   const svg = await satori(markup, {
     height: 400,
@@ -22,13 +26,13 @@ export default defineEventHandler(async (event) => {
     fonts: [
       {
         name: "Inter",
-        data: await buffer.arrayBuffer(),
+        data: await fontBuffer.arrayBuffer(),
       },
     ],
   } as SatoriOptions);
 
   const resvg = new Resvg(svg, {
-    background: "rgba(238, 235, 230, .9)",
+    background: "rgba(255, 255, 255)",
   });
 
   const pngData = resvg.render();
