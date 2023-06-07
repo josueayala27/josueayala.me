@@ -3,6 +3,16 @@ import svgLoader from "vite-svg-loader";
 export default defineNuxtConfig({
   app: {
     head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.png",
+        },
+      ],
       script: [
         {
           async: true,
@@ -12,6 +22,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   modules: [
     "nuxt-gtag",
     "@nuxt/content",
@@ -20,19 +31,23 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@vueuse/motion/nuxt",
   ],
+
   vite: {
     plugins: [svgLoader()],
   },
+
   nitro: {
     prerender: {
       routes: ["/sitemap.xml"],
     },
   },
+
   content: {
     highlight: {
       theme: "dracula",
     },
   },
+
   googleFonts: {
     overwriting: false,
     display: "swap",
@@ -46,7 +61,12 @@ export default defineNuxtConfig({
       "JetBrains Mono": [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
+
   gtag: {
     id: process.env.GTAG_ID,
+  },
+
+  devtools: {
+    enabled: true,
   },
 });
