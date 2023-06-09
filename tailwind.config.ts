@@ -1,8 +1,8 @@
 export default {
   theme: {
     fontFamily: {
-      sans: ["Inter", "sans-serif"],
-      mono: ["JetBrains Mono", "sans-serif"],
+      sans: ["Inter Variable", "sans-serif"],
+      mono: ["JetBrains Mono Variable", "sans-serif"],
     },
     extend: {
       colors: {

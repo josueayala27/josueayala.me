@@ -9,8 +9,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
-          type: "image/png",
-          href: "/favicon.png",
+          href: "/favicon.ico",
         },
       ],
       script: [
@@ -27,7 +26,6 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@nuxt/content",
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-fonts",
     "nuxt-icon",
     "@vueuse/motion/nuxt",
   ],
@@ -45,20 +43,6 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: "dracula",
-    },
-  },
-
-  googleFonts: {
-    overwriting: false,
-    display: "swap",
-    prefetch: false,
-    preconnect: false,
-    preload: true,
-    download: true,
-    base64: false,
-    families: {
-      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      "JetBrains Mono": [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
 
