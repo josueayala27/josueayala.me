@@ -7,12 +7,18 @@ export default defineEventHandler(async (event) => {
     hostname: "https://josueayala.me",
   });
 
+  sitemap.write({
+    url: "/",
+    changefreq: "daily",
+  });
+
   for (const doc of docs) {
     sitemap.write({
       url: doc._path,
-      changefreq: "daily",
+      changefreq: "weekly",
     });
   }
+
   sitemap.end();
 
   return streamToPromise(sitemap);
