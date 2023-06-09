@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --fontsource-display: swap;
+}
+
 h1 {
   @apply text-[2.25em] font-extrabold;
 }
