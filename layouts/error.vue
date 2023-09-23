@@ -1,6 +1,7 @@
 <template>
   <div
-    class="flex items-center justify-center min-h-full flex-col bg-red-400 flex-1">
+    class="flex items-center justify-center min-h-full flex-col bg-red-400 flex-1"
+  >
     <div class="py-3"></div>
     <h1 class="text-[2.25em] font-extrabold">{{ error.statusCode }}</h1>
     <p>{{ error.message }}</p>

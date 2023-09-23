@@ -12,23 +12,6 @@
 
     <UiSeparator />
 
-    <!-- Table of content -->
-    <section
-      class="prose hover:prose-a:text-pastel-green-600 prose-a:no-underline"
-    >
-      <ul>
-        <li
-          v-for="(link, i) in post.body.toc.links"
-          :key="i"
-          class="cursor-pointer font-medium"
-        >
-          <nuxt-link :to="`#${link.id}`">{{ link.text }}</nuxt-link>
-        </li>
-      </ul>
-    </section>
-
-    <UiSeparator />
-
     <!-- Content  -->
     <ContentRenderer class="flex flex-col gap-4" :value="post" />
   </div>
@@ -46,7 +29,7 @@ const route = useRoute();
 const slug = route.params.slug as string;
 
 const { data: post } = await useAsyncData<any>(slug, () =>
-  queryContent("/blog/" + slug).findOne()
+  queryContent("/snippets/" + slug).findOne()
 );
 
 useHead({
