@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 const { data: posts } = await useAsyncData("home", () =>
-  queryContent("/blog")
+  queryContent("/snippets")
     .where({ draft: false })
     .limit(5)
     .only(["description", "title", "_path"])

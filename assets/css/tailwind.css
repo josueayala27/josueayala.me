@@ -7,11 +7,15 @@
 }
 
 h1 {
-  @apply text-[2.25em] font-extrabold;
+  @apply text-[2.25em] leading-10 font-extrabold;
 }
 
 h2 {
   @apply text-[1.5em] font-bold;
+}
+
+h3 {
+  @apply text-lg font-bold;
 }
 
 .line:empty {
