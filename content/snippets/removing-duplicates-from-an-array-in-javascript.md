@@ -39,18 +39,16 @@ const removeDuplicatesFromArray = (array) => {
 }
 ```
 
-By using the `removeDuplicatesFromArray` function, you can easily remove duplicates from arrays of different data types and structures, promoting clean and efficient code in your JavaScript projects.
+You can easily eliminate duplicate elements from an array using the `removeDuplicatesFromArray` function. This will help you maintain clean and efficient JavaScript code for your projects, even with simple arrays.
 
 ```typescript
-const people = [
-  { name: 'Alice', age: 25 },
-  { name: 'Bob', age: 30 },
-  { name: 'Alice', age: 25 },
-];
+const numbers = [1, 2, 3, 1, 2, 4, 5, 4];
 
-// Remove duplicates based on the 'name' property
-const uniquePeople = removeDuplicatesFromArray(people);
+// Remove duplicate numbers
+const uniqueNumbers = removeDuplicatesFromArray(numbers);
 
-console.log(uniquePeople);
-// [{ name: 'Alice', age: 25 }, { name: 'Bob', age: 30 }]
+console.log(uniqueNumbers);
+// [1, 2, 3, 4, 5]
 ```
+
+In this example, you can see how the `removeDuplicatesFromArray` function simplifies the removal of duplicate elements from a basic numeric array, resulting in a clean and efficient outcome.
