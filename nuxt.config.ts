@@ -1,5 +1,3 @@
-import svgLoader from "vite-svg-loader";
-
 export default defineNuxtConfig({
   app: {
     head: {
@@ -12,44 +10,21 @@ export default defineNuxtConfig({
           href: "/favicon.ico",
         },
       ],
-      script: [
-        {
-          async: true,
-          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5295326290228563",
-          crossorigin: "anonymous",
-        },
-      ],
     },
   },
-
   modules: [
-    "nuxt-gtag",
-    "@nuxt/content",
-    "@nuxtjs/tailwindcss",
-    "nuxt-icon",
-    "@vueuse/motion/nuxt",
+    '@nuxt/a11y',
+    '@nuxt/content',
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/image'
   ],
-
-  vite: {
-    plugins: [svgLoader()],
-  },
-
   nitro: {
     prerender: {
       routes: ["/sitemap.xml"],
     },
   },
-
-  content: {
-    highlight: {
-      theme: "dracula",
-    },
-  },
-
-  gtag: {
-    id: process.env.GTAG_ID,
-  },
-
   devtools: {
     enabled: true,
   },

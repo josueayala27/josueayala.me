@@ -1,8 +1,8 @@
 import { SitemapStream, streamToPromise } from "sitemap";
-import { serverQueryContent } from "#content/server";
+import { queryCollection } from "@nuxt/content/server";
 
 export default defineEventHandler(async (event) => {
-  const docs = await serverQueryContent(event).find();
+  const docs = await queryCollection(event, "content").all();
   const sitemap = new SitemapStream({
     hostname: "https://josueayala.me",
   });

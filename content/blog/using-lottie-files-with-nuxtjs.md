@@ -18,10 +18,10 @@ A Lottie is a `JSON` file containing vector settings of our animations, this for
 
 ## Installing the lottie-web package
 
-We are going to use the `lottie-web` package which is provided and sponsored by [airbnb.io](https://airbnb.io), to configure it you just need to add the dependency with `yarn` or `npm`.
+We are going to use the `lottie-web` package which is provided and sponsored by [airbnb.io](https://airbnb.io), to configure it you just need to add the dependency with `npm`.
 
 ```shell
-yarn add lottie-web
+npm install lottie-web
 ```
 
 [comment]: <> (Ver más link de la libreria.)
